@@ -1,1 +1,847 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+:root {
+    --green: #5FB8B6;
+    --violet: #ddcff5;
+    --light-violet: #f7f2fd;
+    --font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+    background-color: #f7f2fd;
+}
+
+/*general*/
+.container-fluid.secciones {
+    border-bottom: 1.5px solid #5FB8B6;
+    padding: 80px 40px;
+}
+
+.container-fluid form {
+    padding: 40px 200px;
+}
+
+h2 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    font-size: 42px;
+}
+
+h3 {
+    font-family: 'Source Sans Pro',
+        sans-serif;
+    font-weight: 300;
+    font-size: 32px;
+}
+
+h4 {
+    font-family: 'Source Sans Pro',
+        sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+}
+
+p {
+    font-family: 'Source Sans Pro',
+        sans-serif;
+    font-weight: 200;
+    font-size: 21px;
+    text-align: justify;
+}
+
+.line {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #5FB8B6;
+    margin-bottom: 2rem !important;
+}
+
+/* Offcanvas estilo */
+.boton-add {
+    border: none;
+    background-color: transparent;
+}
+
+.boton-edit {
+    border: none;
+    background-color: transparent;
+}
+
+.boton-delete {
+    border: none;
+    background-color: transparent;
+}
+
+.boton-delete .bi {
+    color: red;
+}
+
+.boton-edit .bi {
+    color: black;
+}
+
+.navbar.menu .boton-edit {
+    position: relative !important;
+    left: 8% !important;
+}
+
+form input:focus {
+    box-shadow: 0 0 4px 2px #8f68b6 !important;
+    border-color: #8f68b6 !important;
+}
+
+form textarea:focus {
+    box-shadow: 0 0 4px 2px #8f68b6 !important;
+    border-color: #8f68b6 !important;
+}
+
+form select:focus {
+    box-shadow: 0 0 4px 2px #8f68b6 !important;
+    border-color: #8f68b6 !important;
+}
+
+form input.form-check-input:checked {
+    background-color: #8f68b6 !important;
+    border-color: #8f68b6 !important;
+}
+
+#offcanvasAddSkillsIdioma .btn:hover {
+    background-color: #8f68b6 !important;
+    border-color: #8f68b6 !important;
+    color: white !important;
+}
+
+#offcanvasAddSkillsIdioma .btn {
+    color: #8f68b6 !important;
+    border-color: #8f68b6 !important;
+}
+
+form .save {
+    background-color: #7843ad;
+    border-color: #7843ad;
+    color: white;
+}
+
+form .save:hover {
+    border-color: #8f68b6 !important;
+    color: #8f68b6 !important;
+    background-color: transparent !important;
+}
+
+
+/*Responsive Extra Small y Small*/
+@media screen and (max-width:767px) {
+    .container-fluid.secciones {
+        padding: 35px 5px !important;
+    }
+
+    h2 {
+        font-size: 24px !important;
+    }
+
+    h3 {
+        font-size: 18px !important;
+        width: 80% !important;
+    }
+
+    h4 {
+        font-size: 16px !important;
+    }
+
+    p {
+        font-size: 14px !important;
+    }
+
+    .line {
+        margin-bottom: 1rem !important;
+    }
+
+    /* Offcanvas estilo */
+    .boton-add .bi {
+        font-size: large !important;
+    }
+
+    .boton-edit .bi {
+        font-size: large !important;
+    }
+
+    .boton-delete .bi {
+        font-size: large !important;
+    }
+
+    /* Header */
+    .navbar.main {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
+    .navbar.main .navbar-brand {
+        font-size: 10px !important;
+        margin: 0 !important;
+    }
+
+    .navbar.main .navbar-brand img {
+        height: 40px !important;
+        width: 90px !important;
+        margin-right: 1px !important;
+    }
+
+    .navbar.main .nav-item .bi {
+        font-size: 1.4rem !important;
+    }
+
+    .navbar.main .login {
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        padding: 6px !important;
+        margin: 0 !important;
+    }
+
+    .navbar.menu .navbar-nav img {
+        width: 100px !important;
+        border: 2px solid white !important;
+        left: 70px !important;
+        transform: translate(-50%, -40%) !important;
+    }
+
+    .navbar.menu li.brand-txt {
+        left: 24px !important;
+        font-size: 60% !important;
+    }
+
+    .navbar.menu .navbar-nav {
+        font-size: smaller !important;
+    }
+
+    /* Acerca de */
+    #Acerca-de ul li span {
+        font-size: 14px !important;
+    }
+
+    #Acerca-de .info-el {
+        padding: 35px 5px !important;
+    }
+
+    #Acerca-de .titulo-info {
+        width: 70% !important;
+    }
+
+    /* Experiencia */
+    /*Linea vertical*/
+
+    .main-timeline {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .main-timeline:before {
+        content: none !important;
+    }
+
+    /*Contenedores experiencia*/
+    .main-timeline .timeline {
+        width: 100% !important;
+        padding-top: 8px !important;
+    }
+
+    /*Logo Empresa*/
+    .main-timeline .icon {
+        width: 40px !important;
+        height: 40px !important;
+        line-height: 0px !important;
+        top: 12% !important;
+        left: 0 !important;
+        z-index: 1 !important;
+    }
+
+    .main-timeline .icon img {
+        max-width: 40px !important;
+        max-height: 40px !important;
+        margin: auto !important;
+        z-index: 1 !important;
+    }
+
+    .main-timeline .timeline-content {
+        width: 90% !important;
+        float: right !important;
+        padding: 0px !important;
+        margin-right: 20px !important;
+        background: none !important;
+        border: none !important;
+        border-radius: none !important;
+        margin-top: 5% !important;
+    }
+
+    .main-timeline .timeline-content:before,
+    .main-timeline .timeline-content:after {
+        content: none !important;
+    }
+
+    .main-timeline .content-inner {
+        line-height: 16px !important;
+        padding: 10px 10px 10px 20% !important;
+    }
+
+    .main-timeline .year {
+        width: 15% !important;
+        font-size: 14px !important;
+    }
+
+    .main-timeline .title {
+        font-size: 16px !important;
+    }
+
+    .main-timeline .timeline:nth-child(2n) .content-inner {
+        padding: 10px 20% 10px 10px !important;
+    }
+
+    .main-timeline .timeline:nth-child(2n) {
+        padding-top: 30px !important;
+        padding-bottom: 10px !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .main-timeline .timeline:nth-child(2n) .icon {
+        top: 14% !important;
+    }
+
+    /* Educacion */
+    #Educacion img {
+        height: 70px !important;
+        width: auto !important;
+    }
+
+    #Educacion h3.card-title {
+        width: 80% !important;
+    }
+
+    /* Skills */
+    #Skills .progress {
+        margin-bottom: 12px !important;
+        height: 15px !important;
+    }
+
+    #Skills .idioma-skills {
+        font-size: 14px !important;
+    }
+
+    #Skills li span {
+        font-size: 14px !important;
+    }
+
+
+    /* Proyectos */
+    #Proyectos .row .col .card h3 {
+        width: 80% !important;
+    }
+}
+
+/*Responsive Medium y Large*/
+@media screen and (min-width:768px) and (max-width:1199px) {
+
+    .container-fluid.secciones {
+        padding: 40px 15px;
+    }
+
+    h2 {
+        font-size: 30px !important;
+    }
+
+    h3 {
+        font-size: 24px !important;
+        width: 80% !important;
+        text-align: left !important;
+    }
+
+    h4 {
+        font-size: 18px !important;
+    }
+
+    p {
+        font-size: 16px !important;
+    }
+
+    .line {
+        margin-bottom: 1.5rem !important;
+    }
+
+    span.ic-edicion .bi {
+        font-size: large !important;
+    }
+
+    span.ic-edicion {
+        margin-left: 14px !important;
+    }
+
+    /* Ofcanvas */
+    .navbar.menu .boton-edit {
+        position: relative !important;
+        left: 5.5% !important;
+    }
+
+    /* Header */
+    .navbar.menu .navbar-nav img {
+        width: 170px !important;
+        border: 2px solid white !important;
+        left: 110px !important;
+    }
+
+    .navbar.menu .brand-txt.name,
+    .navbar.menu .title {
+        left: 35px !important;
+        font-size: 80% !important;
+    }
+
+    .navbar.menu .navbar-nav {
+        font-size: medium !important;
+    }
+
+    /* Acerca de */
+    #Acerca-de.secciones span {
+        font-size: 16px !important;
+    }
+
+    #Acerca-de .info-el {
+        padding: 60px 10px !important;
+    }
+
+    #Acerca-de .titulo-info {
+        width: 85% !important;
+    }
+
+    /* Experiencia */
+    .main-timeline {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .main-timeline .icon {
+        width: 80px !important;
+        height: 80px !important;
+        line-height: 80px !important;
+    }
+
+    .main-timeline .icon img {
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    .main-timeline .title {
+        font-size: 16px !important;
+        width: 65% !important;
+    }
+
+    .main-timeline .content-inner {
+        line-height: 18px !important;
+    }
+
+    /* Educacion */
+    #Educacion img {
+        height: 100px !important;
+        width: auto !important;
+    }
+
+    #Educacion .card {
+        max-width: 700px !important;
+    }
+
+    /* Skills */
+    #Skills li span {
+        font-size: 16px !important;
+    }
+
+    #Skills .idioma-skills {
+        font-size: 16px !important;
+
+    }
+
+    /* Proyectos */
+    #Proyectos .row .col .card h3 {
+        width: 85% !important;
+    }
+}
+
+/* header */
+.navbar.main {
+    background-color: #ddcff5;
+}
+
+.btn.login {
+    color: #3baf9a;
+    border: 1.5px solid #3baf9a;
+    font-weight: 500;
+}
+
+.btn.login:hover {
+    background-color: #3baf9a;
+    color: white;
+}
+
+.navbar.main .navbar-brand img:hover {
+    transform: scale(1.1) !important;
+}
+
+.navbar.main .navbar-nav li:hover {
+    transform: scale(1.3);
+}
+
+#Banner.container-fluid {
+    line-height: 0;
+}
+
+.banner {
+    width: 100%;
+    border-radius: 2px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-nav img {
+    width: 220px;
+    border-radius: 50%;
+    border: 4px solid white;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: 190px;
+    transform: translate(-50%, -50%);
+    transition: 1s;
+    z-index: 2 !important;
+}
+
+
+.fade {
+    opacity: 0;
+    transform: perspective(0.5);
+    transition: 1s;
+}
+
+li.brand-txt {
+    position: relative;
+    left: 50%;
+}
+
+/*Acerca de*/
+
+#Acerca-de.secciones {
+    padding: 0 !important;
+}
+
+#Acerca-de.secciones span {
+    font-family: 'Source Sans Pro',
+        sans-serif;
+    font-weight: 300;
+    font-size: 21px;
+}
+
+#Acerca-de.secciones span.list-title {
+    color: #9318a3;
+    font-weight: bold !important;
+}
+
+#Acerca-de .info-el {
+    padding: 80px 40px;
+}
+
+#Acerca-de .info-el.ad {
+    border-right: 1.5px solid #3baf9a;
+}
+
+#Acerca-de .info-el:hover {
+    zoom: 105%;
+    transition: 3s;
+    background-color: #ebdefc;
+}
+
+/*Experiencia*/
+
+.main-timeline {
+    overflow: hidden;
+    position: relative;
+}
+
+/*Linea vertical*/
+.main-timeline:before {
+    content: "";
+    width: 3px;
+    height: 100%;
+    background: #9318a3;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/*Contenedores experiencia*/
+.main-timeline .timeline {
+    width: 50%;
+    float: left;
+    position: relative;
+}
+
+/*Logo empresa*/
+.main-timeline .icon {
+    display: block;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.main-timeline .icon img {
+    display: block;
+    max-width: 100px;
+    max-height: 100px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+/*Contenido linea de tiempo*/
+
+.main-timeline .timeline-content {
+    width: 65%;
+    float: right;
+    padding: 10px;
+    margin-right: 20px;
+    background: #fff;
+    border: 3px solid #9318a3;
+    border-radius: 15px;
+    position: relative;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.main-timeline .timeline-content:before,
+.main-timeline .timeline-content:after {
+    content: "";
+    border-left: 22px solid #9318a3;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%);
+}
+
+.main-timeline .timeline-content:after {
+    border-left-color: #fff;
+    right: -18px;
+}
+
+/*Carcteristicas generales Experiencia*/
+.main-timeline .content-inner {
+    padding: 20px 10px 20px 25%;
+    position: relative;
+}
+
+.main-timeline .content-inner:before {
+    content: "";
+    border-left: 15px solid;
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent;
+    position: absolute;
+    top: 50%;
+    right: -15px;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+/*Año Experiencia*/
+.main-timeline .year {
+    display: flex;
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 20px !important;
+    font-family: 'Source Sans Pro',
+        sans-serif !important;
+    font-weight: bold;
+    color: #fff;
+}
+
+.main-timeline .year time {
+    font-size: 18px;
+    word-break: keep-all;
+}
+
+/*Titulo Experiencia*/
+#Experiencia .main-timeline .title {
+    text-align: left !important;
+    font-size: 20px;
+    font-weight: bold;
+    color: #14231c;
+    margin: 0 5px 5px 0;
+    margin-block-start: 0 !important;
+}
+
+/*Icono edicion Experiencia*/
+#Experiencia .main-timeline .title .ic-edicion {
+    margin-left: 15%;
+}
+
+/*Descripcion experiencia*/
+.main-timeline .description {
+    font-size: 20px;
+    color: #14231c;
+    margin: 0;
+    text-align: justify;
+    overflow-wrap: break-word;
+}
+
+/*Cambios para el lado derecho de la linea de tiempo*/
+.main-timeline .timeline:nth-child(2n):before,
+.main-timeline .timeline:nth-child(2n) .icon,
+.main-timeline .timeline:nth-child(2n) .year {
+    left: auto;
+    right: 0;
+}
+
+.main-timeline .timeline:nth-child(2n) .timeline-content {
+    float: left;
+    margin: 0 0 0 20px;
+    padding: 10px;
+}
+
+.main-timeline .timeline:nth-child(2n) .timeline-content:before,
+.main-timeline .timeline:nth-child(2n) .timeline-content:after,
+.main-timeline .timeline:nth-child(2n) .content-inner:before {
+    border-left: none;
+    border-right: 22px solid #9318a3;
+    right: auto;
+    left: -25px;
+}
+
+.main-timeline .timeline:nth-child(2n) .timeline-content:after {
+    border-right-color: #fff;
+    left: -18px;
+}
+
+.main-timeline .timeline:nth-child(2n) .content-inner {
+    padding: 20px 25% 20px 10px;
+}
+
+.main-timeline .timeline:nth-child(2n) .content-inner:before {
+    border-right: 15px solid;
+    left: -15px;
+}
+
+.main-timeline .timeline:nth-child(2n) {
+    margin-top: 100px;
+    margin-bottom: 0px;
+}
+
+/*Colores Experiencia*/
+
+.main-timeline .timeline:nth-child(4n+1) .content-inner {
+    background: #35BC9C;
+}
+
+.main-timeline .timeline:nth-child(4n+1) .content-inner:before {
+    border-left-color: #35BC9C;
+    border-right-color: #35BC9C;
+}
+
+.main-timeline .timeline:nth-child(4n+1) .year {
+    background: #2c9e84;
+}
+
+.main-timeline .timeline:nth-child(4n+2) .content-inner {
+    background: #7DB6C9;
+}
+
+.main-timeline .timeline:nth-child(4n+2) .content-inner:before {
+    border-left-color: #7DB6C9;
+    border-right-color: #7DB6C9;
+}
+
+.main-timeline .timeline:nth-child(4n+2) .year {
+    background: #6391a0 !important;
+}
+
+.main-timeline .timeline:nth-child(4n+3) .content-inner {
+    background: #AAB0E2;
+}
+
+.main-timeline .timeline:nth-child(4n+3) .content-inner:before {
+    border-left-color: #AAB0E2;
+}
+
+.main-timeline .timeline:nth-child(4n+3) .year {
+    background: #888db4 !important;
+}
+
+.main-timeline .timeline:nth-child(4n+4) .content-inner {
+    background: #C1AEF0 !important;
+}
+
+.main-timeline .timeline:nth-child(4n+4) .content-inner:before {
+    border-right-color: #C1AEF0 !important;
+}
+
+.main-timeline .timeline:nth-child(4n+4) .year {
+    background: #9a8bc0 !important;
+}
+
+/*Educacion*/
+
+#Educacion img {
+    /* position: relative; */
+    height: 130px;
+    width: auto;
+}
+
+#Educacion .card {
+    max-width: 1000px;
+}
+
+#Educacion .card-title {
+    width: 90%;
+}
+
+/*Skills*/
+#Skills .progress {
+    margin-bottom: 20px;
+    height: 20px;
+    background-color: white;
+    border: 1px solid #9318a3;
+}
+
+#Skills .progress-bar {
+    background-color: #9318a3;
+}
+
+#Skills .idioma {
+    text-align: center;
+}
+
+#Skills .idioma-comp {
+    text-align: left;
+}
+
+#Skills li.idioma-skills {
+    color: #9318a3;
+    font-weight: normal;
+    font-family: 'Source Sans Pro',
+        sans-serif;
+    font-size: 21px;
+}
+
+#Skills li span {
+    color: initial !important;
+    font-weight: 200 !important;
+}
