@@ -1,1 +1,116 @@
-<p>header works!</p>
+<header>
+    <!--Barra principal-->
+    <nav class="navbar main ps-3 pe-3 pt-1 pb-0 mt-0 mb-0">
+        <div class="container-fluid" id="Inicio">
+            <!-- Logo Argentina Programa -->
+            <a class="navbar-brand pb-0" href="https://www.argentina.gob.ar/economia/conocimiento/argentina-programa"
+                target="_blank">
+                <img src="https://i.ibb.co/dQzFMNt/logo-Arg-Prog.png" height="60" width="140"
+                    class=" d-inline-block align-text-center me-2">
+                #YoProgramo
+            </a>
+
+            <!-- Redes Sociales -->
+            <ul class="navbar-nav flex-row flex-wrap ms-auto">
+                <li class="nav-item pe-3 pe-md-5">
+                    <a href="https://github.com/EmiAr5/EmiAr5.git" target="_blank">
+                        <i class="bi bi-github" style="font-size: 2.3rem; color: #3baf9a;">
+                        </i>
+                    </a>
+                </li>
+
+                <li class="nav-item pe-3 pe-md-5">
+                    <a href="https://www.linkedin.com/in/emiliana-arduzzo" target="_blank">
+                        <i class="bi bi-linkedin" style="font-size: 2.3rem; color: #3baf9a;">
+                        </i>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Boton Login -->
+            <button class="btn login p-2 fs-5" type="button">
+                Login
+            </button>
+            <!--<button class="btn login p-2 fs-5" type="button">
+                Logout
+            </button>-->
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <div id="Banner" class="container-fluid p-0 m-0">
+        <img class="banner" src="https://i.ibb.co/qmPYF5W/banner-Portfolio.gif">
+    </div>
+    <!--Foto perfil-->
+    <img id="foto" alt="" class="img-fluid" src="https://i.ibb.co/vZJQs1S/foto-perfil-cuadrada.jpg" />
+
+</header>
+
+<!-- Menu secundario -->
+<nav class="navbar menu sticky-top navbar-expand-lg navbar-light bg-white pt-0 pb-0" id="menusecundario">
+    <div class="container-fluid p-0">
+        <!-- nombre y título -->
+        <ul class="navbar-nav flex-column d-inline-block">
+            <li class="brand-txt name fs-5 fw-bolder ms-xl-3 ms-lg-2">
+                Emiliana Arduzzo
+            </li>
+
+            <li class="brand-txt title">
+                Full Stack Developer Junior
+            </li>
+        </ul>
+
+        <!--Boton edición Imagen, nombre y apellido, título-->
+        <button class="boton-edit" type="button">
+            <i class="bi bi-pencil-square fs-4"></i>
+        </button>
+
+        <!-- Botón collapse -->
+        <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+            </span>
+        </button>
+
+        <!-- Menú collapse -->
+        <div class="collapse navbar-collapse justify-content-around" id="menu">
+            <ul class="navbar-nav fw-semibold fs-5 ms-auto me-lg-5 text-center">
+                <li class="nav-item ms-3 me-3">
+                    <a href="#Inicio" class="nav-link">
+                        Inicio
+                    </a>
+                </li>
+
+                <li class="nav-item ms-3 me-3">
+                    <a href="#Acerca-de" class="nav-link">
+                        Acerca de
+                    </a>
+                </li>
+
+                <li class="nav-item ms-3 me-3">
+                    <a href="#Experiencia" class="nav-link">
+                        Experiencia
+                    </a>
+                </li>
+
+                <li class="nav-item ms-3 me-3">
+                    <a href="#Educacion" class="nav-link">
+                        Educación
+                    </a>
+                </li>
+
+                <li class="nav-item ms-3 me-3">
+                    <a href="#Skills" class="nav-link">
+                        Skills
+                    </a>
+                </li>
+
+                <li class="nav-item ms-3 me-3">
+                    <a href="#Proyectos" class="nav-link">
+                        Proyectos
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
