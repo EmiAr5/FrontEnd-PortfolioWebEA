@@ -34,20 +34,20 @@
             
 
             <ul class="list-unstyled">
-                <li>
-                    <h4 class="d-inline-block">Colaboracion</h4>
+                <li *ngFor="let Softskill of softskill">
+                    <h4 class="d-inline-block">{{Softskill.nombre}}</h4>
                     <!-- Botón edición Softskill -->
                     <button class="boton-edit" type="button">
                         <i class="bi bi-pencil-square fs-5"></i>
                     </button>
                     <!-- Botón eliminar Softskill -->
-                    <button class="boton-delete" type="button">
+                    <button class="boton-delete" type="button" (click)="deleteSoftSkill(Softskill.id)">
                         <i class="bi bi-x-square fs-5"></i>
                     </button>
                 <div class="progress">
                     <div class="progress-bar" role="progressbar"
-                    [attr.aria-valuenow]="" 
-                    [style.width]="" 
+                    [attr.aria-valuenow]="Softskill.porcentaje" 
+                    [style.width]="Softskill.porcentaje+'%'" 
                     aria-valuemin="0" aria-valuemax="100"> 
                     </div>
                 </div>
@@ -62,20 +62,20 @@
             
 
             <ul class="list-unstyled">
-                <li >
-                    <h4 class="d-inline-block">Programacion</h4>
+                <li *ngFor="let Hardskill of hardskill">
+                    <h4 class="d-inline-block">{{Hardskill.nombre}}</h4>
                     <!-- Botón edición Hardskill -->
-                    <button class="boton-edit" type="button" >
+                    <button class="boton-edit" type="button">
                         <i class="bi bi-pencil-square fs-5"></i>
                     </button>
                     <!-- Botón eliminar Softskill -->
-                    <button class="boton-delete" type="button" >
+                    <button class="boton-delete" type="button" (click)="deleteHardSkill(Hardskill.id)">
                         <i class="bi bi-x-square fs-5"></i>
                     </button>
                 <div class="progress">
                     <div class="progress-bar" role="progressbar" 
-                    [attr.aria-valuenow]="" 
-                    [style.width]=""
+                    [attr.aria-valuenow]="Hardskill.porcentaje" 
+                    [style.width]="Hardskill.porcentaje+'%'"
                     aria-valuemin="0" aria-valuemax="100"> </div>
                 </div>
                 </li>
@@ -90,20 +90,20 @@
             
 
             <div class="row">
-                    <div class="col-6 ps-0 pe-0">
-                        <h4 class="idioma d-inline-block">Espanol</h4>
+                    <div class="col-6 ps-0 pe-0" *ngFor="let Idioma of idioma">
+                        <h4 class="idioma d-inline-block">{{Idioma.nombre}}</h4>
                         <!-- Botón edición Idioma -->
                     <button class="boton-edit" type="button">
                         <i class="bi bi-pencil-square fs-5"></i>
                     </button>
                     <!-- Botón eliminar Idioma -->
-                    <button class="boton-delete" type="button">
+                    <button class="boton-delete" type="button" (click)="deleteIdioma(Idioma.id)">
                         <i class="bi bi-x-square fs-5"></i>
                     </button>
                         <ul class="idioma-comp list-unstyled ms-3">
-                            <li class="idioma-skills">Escritura: <span>Nativo</span></li>
-                            <li class="idioma-skills">Lectura: <span>Nativo</span></li>
-                            <li class="idioma-skills">Oralidad: <span>Nativo</span></li>
+                            <li class="idioma-skills">Escritura: <span>{{Idioma.escritura}}</span></li>
+                            <li class="idioma-skills">Lectura: <span>{{Idioma.lectura}}</span></li>
+                            <li class="idioma-skills">Oralidad: <span>{{Idioma.oralidad}}</span></li>
                         </ul>
                     </div>
                     
