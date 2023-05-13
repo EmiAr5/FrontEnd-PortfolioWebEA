@@ -38,27 +38,28 @@
     </nav>
 
     <!-- Banner -->
-    <div id="Banner" class="container-fluid p-0 m-0">
-        <img class="banner" src="https://i.ibb.co/qmPYF5W/banner-Portfolio.gif">
+    <div id="Banner" class="container-fluid p-0 m-0" *ngIf="persona">
+        <img class="banner" [src]="persona.urlbanner">
     </div>
     <!--Foto perfil-->
-    <img id="foto" alt="" class="img-fluid" src="https://i.ibb.co/vZJQs1S/foto-perfil-cuadrada.jpg" />
-
+    <img id="foto" alt="" class="img-fluid" [src]="persona.urlfoto">
 </header>
 
 <!-- Menu secundario -->
 <nav class="navbar menu sticky-top navbar-expand-lg navbar-light bg-white pt-0 pb-0" id="menusecundario">
     <div class="container-fluid p-0">
         <!-- nombre y título -->
+        <div *ngIf="persona">
         <ul class="navbar-nav flex-column d-inline-block">
             <li class="brand-txt name fs-5 fw-bolder ms-xl-3 ms-lg-2">
-                Emiliana Arduzzo
+                {{persona.nombre}} {{persona.apellido}}
             </li>
 
             <li class="brand-txt title">
-                Full Stack Developer Junior
+                {{persona.ocupacion}}
             </li>
         </ul>
+        </div>
 
         <!--Boton edición Imagen, nombre y apellido, título-->
         <button class="boton-edit" type="button">
