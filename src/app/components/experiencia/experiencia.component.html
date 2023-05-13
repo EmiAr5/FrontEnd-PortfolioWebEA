@@ -5,37 +5,35 @@
 
     <!-- Botón Agregar Experiencia -->
     <button class="boton-add" type="button">
-            <i class="bi bi-plus-square fs-3 ms-5" routerLink="/nuevaexperiencia"></i>
+        <i class="bi bi-plus-square fs-3 ms-5" routerLink="/nuevaexperiencia"></i>
     </button>
-    
+
     <span class="line"></span>
 
     <!-- Línea de tiempo -->
     <div class="main-timeline ps-5 pe-5">
-        <div class="timeline">
-            <span class="icon"><img class="logo"  src="" alt="Logo de la empresa"/></span>
-            <div class="timeline-content"> 
+        <div class="timeline" *ngFor="let Experiencia of experiencia">
+            <span class="icon"><img class="logo" [src]="Experiencia.urllogocomp" alt="Logo de la empresa" /></span>
+            <div class="timeline-content">
                 <div class="content-inner">
-                    <span class="year"> <time>mar. 2018</time>&nbsp; - &nbsp;<time>Actual</time>  </span>
-                    <h3 class="title d-inline-block"> Back End </h3>
+                    <span class="year"> <time>{{Experiencia.fechainicio}}</time>&nbsp; -
+                        &nbsp;<time>{{Experiencia.fechafin}}</time> </span>
+                    <h3 class="title d-inline-block"> {{Experiencia.puesto}} </h3>
                     <!-- Botón edición Experiencia -->
                     <button class="boton-edit" type="button">
                         <i class="bi bi-pencil-square fs-5"></i>
                     </button>
                     <!-- Botón eliminar Experiencia -->
-                    <button class="boton-delete" type="button">
+                    <button class="boton-delete" type="button" (click)="deleteExperiencia(Experiencia.id)">
                         <i class="bi bi-x-square fs-5"></i>
                     </button>
 
-                    <h4>Microsoft Corporation</h4>
+                    <h4>{{Experiencia.compania}}</h4>
                     <p class="description">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam, natus placeat molestias soluta repudiandae animi accusantium. Eaque qui architecto tempora modi quod natus libero suscipit, sint, recusandae ipsum voluptatum fugiat.
+                        {{Experiencia.descripciontrabajo}}
                     </p>
                 </div>
             </div>
         </div>
     </div>
-
-    
-            
 </section>
