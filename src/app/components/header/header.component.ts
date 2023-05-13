@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Persona } from 'src/app/model/persona';
 import { PersonaService } from 'src/app/service/persona.service';
+import { TokenService } from 'src/app/service/token.service';
 
 
 @Component({
@@ -11,13 +12,18 @@ import { PersonaService } from 'src/app/service/persona.service';
 })
 export class HeaderComponent implements OnInit {
   persona!: Persona;
-  
+  isLogged = false;
 
-  constructor(private personaS: PersonaService) { }
+
+  constructor(private personaS: PersonaService, private tokenS: TokenService, private router: Router) { }
 
   ngOnInit(): void {
-
     this.cargarPersona();
+    if (this.tokenS.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
   }
 
 
@@ -27,6 +33,14 @@ export class HeaderComponent implements OnInit {
       data => {
         this.persona = data;
       })
+  }
+
+  login() {
+    this.router.navigate(['/login']);
+  }
+  onLogOut(): void {
+    this.tokenS.logOut();
+    location.reload();
   }
 
 }

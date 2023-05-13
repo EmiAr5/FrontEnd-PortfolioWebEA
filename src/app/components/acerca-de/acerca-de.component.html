@@ -5,7 +5,7 @@
         <div class="col-6 info-el ad" *ngIf="persona">
             <h2 class="mb-3 d-inline-block titulo-info">Acerca de</h2>
             <!-- Botón edición Acerca de -->
-            <button class="boton-edit" type="button">
+            <button class="boton-edit" type="button" *ngIf="isLogged">
                 <i class="bi bi-pencil-square fs-4  ms-lg-3"></i>
             </button>
             <span class="line"></span>
@@ -19,7 +19,7 @@
             <h2 class="mb-3 d-inline-block titulo-info">Información personal</h2>
 
             <!-- Botón edición Información personal -->
-            <button class="boton-edit" type="button">
+            <button class="boton-edit" type="button" *ngIf="isLogged">
                 <i class="bi bi-pencil-square fs-4 ms-lg-3"></i>
             </button>
 

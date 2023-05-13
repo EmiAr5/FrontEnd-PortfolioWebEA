@@ -28,12 +28,12 @@
             </ul>
 
             <!-- Boton Login -->
-            <button class="btn login p-2 fs-5" type="button">
+            <button class="btn login p-2 fs-5" type="button" (click)="login()" *ngIf="!isLogged">
                 Login
             </button>
-            <!--<button class="btn login p-2 fs-5" type="button">
+            <button class="btn login p-2 fs-5" type="button" (click)="onLogOut()" *ngIf="isLogged">
                 Logout
-            </button>-->
+            </button>
         </div>
     </nav>
 
@@ -62,7 +62,7 @@
         </div>
 
         <!--Boton edición Imagen, nombre y apellido, título-->
-        <button class="boton-edit" type="button">
+        <button class="boton-edit" type="button" *ngIf="isLogged">
             <i class="bi bi-pencil-square fs-4"></i>
         </button>
 
