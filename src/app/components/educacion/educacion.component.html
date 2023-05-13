@@ -10,31 +10,31 @@
     <span class="line"></span>
 
     <div class="row justify-content-center align-items-center ms-2 me-2">
-    <div class="card col-12 mb-3 p-sm-4 p-1">
+    <div class="card col-12 mb-3 p-sm-4 p-1" *ngFor="let Educacion of educacion">
             <div class="row">
                 <div class="col-md-3 d-flex justify-content-center align-items-center">
-                    <img src="" class="img-fluid rounded-start" alt="...">
+                    <img [src]="Educacion.urllogoinst" class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-9">
                     <div class="card-body">
-                        <h3 class="card-title d-inline-block mb-3">Instituto Superior Joaquin V Gonzalez</h3>
+                        <h3 class="card-title d-inline-block mb-3"> {{Educacion.institucion}} </h3>
                         <!-- Botón edición Experiencia -->
                     <button class="boton-edit" type="button">
                         <i class="bi bi-pencil-square fs-5"></i>
                     </button>
                     <!-- Botón eliminar Experiencia -->
-                    <button class="boton-delete" type="button">
+                    <button class="boton-delete" type="button" (click)="deleteEducacion(Educacion.id)">
                         <i class="bi bi-x-square fs-5"></i>
                     </button>
                         
                         <h4 class="card-subtitle mb-4" >
-                            <time> 2008 </time>&nbsp; - &nbsp; <time> 2010 </time>
+                            <time> {{Educacion.fechainicio}} </time>&nbsp; - &nbsp; <time> {{Educacion.fechafin}} </time>
                         </h4>
                         <h4 class="card-text">
-                            Profesorado de Matematica
+                            {{Educacion.carrera}}
                         </h4>
-                        <p> Profesora de Matematica </p>
-                        <p>8.4</p>
+                        <p> {{Educacion.tituloobtenido}} </p>
+                        <p>Promedio: {{Educacion.puntaje}}</p>
                     </div>
                 </div>
             </div>
