@@ -9,7 +9,6 @@
                     class=" d-inline-block align-text-center me-2">
                 #YoProgramo
             </a>
-
             <!-- Redes Sociales -->
             <ul class="navbar-nav flex-row flex-wrap ms-auto">
                 <li class="nav-item pe-3 pe-md-5">
@@ -26,7 +25,6 @@
                     </a>
                 </li>
             </ul>
-
             <!-- Boton Login -->
             <button class="btn login p-2 fs-5" type="button" (click)="login()" *ngIf="!isLogged">
                 Login
@@ -36,7 +34,6 @@
             </button>
         </div>
     </nav>
-
     <!-- Banner -->
     <div id="Banner" class="container-fluid p-0 m-0" *ngIf="persona">
         <img class="banner" [src]="persona.urlbanner">
@@ -50,29 +47,25 @@
     <div class="container-fluid p-0">
         <!-- nombre y título -->
         <div *ngIf="persona">
-        <ul class="navbar-nav flex-column d-inline-block">
-            <li class="brand-txt name fs-5 fw-bolder ms-xl-3 ms-lg-2">
-                {{persona.nombre}} {{persona.apellido}}
-            </li>
-
-            <li class="brand-txt title">
-                {{persona.ocupacion}}
-            </li>
-        </ul>
+            <ul class="navbar-nav flex-column d-inline-block">
+                <li class="brand-txt name fs-5 fw-bolder ms-xl-3 ms-lg-2">
+                    {{persona.nombre}} {{persona.apellido}}
+                </li>
+                <li class="brand-txt title">
+                    {{persona.ocupacion}}
+                </li>
+            </ul>
         </div>
-
         <!--Boton edición Imagen, nombre y apellido, título-->
-        <button class="boton-edit" type="button" *ngIf="isLogged">
+        <button class="boton-edit" type="button" (click)="editHeader()" *ngIf="isLogged">
             <i class="bi bi-pencil-square fs-4"></i>
         </button>
-
         <!-- Botón collapse -->
         <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">
             </span>
         </button>
-
         <!-- Menú collapse -->
         <div class="collapse navbar-collapse justify-content-around" id="menu">
             <ul class="navbar-nav fw-semibold fs-5 ms-auto me-lg-5 text-center">
@@ -81,31 +74,26 @@
                         Inicio
                     </a>
                 </li>
-
                 <li class="nav-item ms-3 me-3">
                     <a href="#Acerca-de" class="nav-link">
                         Acerca de
                     </a>
                 </li>
-
                 <li class="nav-item ms-3 me-3">
                     <a href="#Experiencia" class="nav-link">
                         Experiencia
                     </a>
                 </li>
-
                 <li class="nav-item ms-3 me-3">
                     <a href="#Educacion" class="nav-link">
                         Educación
                     </a>
                 </li>
-
                 <li class="nav-item ms-3 me-3">
                     <a href="#Skills" class="nav-link">
                         Skills
                     </a>
                 </li>
-
                 <li class="nav-item ms-3 me-3">
                     <a href="#Proyectos" class="nav-link">
                         Proyectos

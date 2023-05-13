@@ -5,6 +5,7 @@ import { Softskill } from 'src/app/model/softskill';
 import { HardskillService } from 'src/app/service/hardskill.service';
 import { IdiomaService } from 'src/app/service/idioma.service';
 import { SoftskillService } from 'src/app/service/softskill.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-skill',
@@ -15,16 +16,22 @@ export class SkillComponent implements OnInit {
   softskill: Softskill[] = [];
   hardskill: Hardskill[] = [];
   idioma: Idioma[] = [];
+  isLogged = false;
 
-  constructor(private softskillS: SoftskillService, private hardskillS: HardskillService, private idiomaS: IdiomaService) { }
-  
+  constructor(private softskillS: SoftskillService, private hardskillS: HardskillService, private idiomaS: IdiomaService, private tokenS: TokenService) { }
+
   ngOnInit(): void {
     this.cargarSoftSkill();
     this.cargarHardSkill();
     this.cargarIdioma();
+    if (this.tokenS.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
   }
 
-  cargarSoftSkill(): void{
+  cargarSoftSkill(): void {
     this.softskillS.list().subscribe(
       data => {
         this.softskill = data;
@@ -32,7 +39,7 @@ export class SkillComponent implements OnInit {
     )
   }
 
-  cargarHardSkill(): void{
+  cargarHardSkill(): void {
     this.hardskillS.list().subscribe(
       data => {
         this.hardskill = data;
@@ -40,7 +47,7 @@ export class SkillComponent implements OnInit {
     )
   }
 
-  cargarIdioma(): void{
+  cargarIdioma(): void {
     this.idiomaS.list().subscribe(
       data => {
         this.idioma = data;
@@ -48,7 +55,7 @@ export class SkillComponent implements OnInit {
     )
   }
 
-  deleteSoftSkill(id?: number): void{
+  deleteSoftSkill(id?: number): void {
     if (id != undefined) {
       this.softskillS.delete(id).subscribe(
         data => {
@@ -60,7 +67,7 @@ export class SkillComponent implements OnInit {
     }
   }
 
-  deleteHardSkill(id?: number): void{
+  deleteHardSkill(id?: number): void {
     if (id != undefined) {
       this.hardskillS.delete(id).subscribe(
         data => {
@@ -72,7 +79,7 @@ export class SkillComponent implements OnInit {
     }
   }
 
-  deleteIdioma(id?: number): void{
+  deleteIdioma(id?: number): void {
     if (id != undefined) {
       this.idiomaS.delete(id).subscribe(
         data => {

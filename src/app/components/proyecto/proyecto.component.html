@@ -5,22 +5,23 @@
     <button class="boton-add" type="button">
         <i class="bi bi-plus-square fs-3 ms-5"></i>
     </button>
-    
 
     <span class="line"></span>
 
     <div class="row row-cols-1 row-cols-sm-2 g-4 ms-3 me-3">
         <div class="col d-flex" *ngFor="let Proyecto of proyecto">
             <div class="card align-self-stretch">
-                <a href="{{Proyecto.enlace}}" target="_blank"> <img [src]="Proyecto.urlimagen" class="card-img-top" alt="..."> </a>
+                <a href="{{Proyecto.enlace}}" target="_blank"> <img [src]="Proyecto.urlimagen" class="card-img-top"
+                        alt="..."> </a>
                 <div class="card-body">
                     <h3 class="card-title d-inline-block">{{Proyecto.nombre}}</h3>
                     <!-- Botón edición Proyecto-->
-                    <button class="boton-edit" type="button">
+                    <button class="boton-edit" type="button" *ngIf="isLogged"
+                        routerLink="/editProyecto/{{Proyecto.id}}">
                         <i class="bi bi-pencil-square fs-5"></i>
                     </button>
                     <!-- Botón eliminar Proyecto-->
-                    <button class="boton-delete" type="button" (click)="deleteProyecto(Proyecto.id)">
+                    <button class="boton-delete" type="button" *ngIf="isLogged" (click)="deleteProyecto(Proyecto.id)">
                         <i class="bi bi-x-square fs-5"></i>
                     </button>
                     <h4 class="card-subtitle">
@@ -33,6 +34,4 @@
             </div>
         </div>
     </div>
-
-    
 </section>

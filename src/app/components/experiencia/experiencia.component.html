@@ -1,8 +1,6 @@
 <!-- Experiencia-->
 <section id="Experiencia" class="container-fluid secciones">
-
     <h2 class="mb-3 d-inline-block">Experiencia</h2>
-
     <!-- Botón Agregar Experiencia -->
     <button class="boton-add" type="button">
         <i class="bi bi-plus-square fs-3 ms-5" routerLink="/nuevaexperiencia"></i>
@@ -20,14 +18,15 @@
                         &nbsp;<time>{{Experiencia.fechafin}}</time> </span>
                     <h3 class="title d-inline-block"> {{Experiencia.puesto}} </h3>
                     <!-- Botón edición Experiencia -->
-                    <button class="boton-edit" type="button">
+                    <button class="boton-edit" type="button" *ngIf="isLogged"
+                        routerLink="/editExperiencia/{{Experiencia.id}}">
                         <i class="bi bi-pencil-square fs-5"></i>
                     </button>
                     <!-- Botón eliminar Experiencia -->
-                    <button class="boton-delete" type="button" (click)="deleteExperiencia(Experiencia.id)">
+                    <button class="boton-delete" type="button" *ngIf="isLogged"
+                        (click)="deleteExperiencia(Experiencia.id)">
                         <i class="bi bi-x-square fs-5"></i>
                     </button>
-
                     <h4>{{Experiencia.compania}}</h4>
                     <p class="description">
                         {{Experiencia.descripciontrabajo}}

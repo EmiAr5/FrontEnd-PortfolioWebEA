@@ -1,0 +1,45 @@
+<!-- Formulario edición Imagen, nombre y apellido, título -->
+<div class="container-fluid">
+    <div class="container fondo shadow">
+        <form (ngSubmit)="onUpdateHeader()" novalidate #f="ngForm" class="p-4">
+            <div class="d-grid d-md-flex justify-content-md-end">
+                <button type="button" class="btn-close fs-5 me-md-2" aria-label="Close" routerLink="/"></button>
+            </div>
+            <h3>Datos Header</h3>
+            <p style="margin-bottom: 24px; color: gray;" class="text-center">Completa los campos que deseas modificar.
+            </p>
+            <div class="mb-3">
+                <label for="urlbanner" class="form-label">Url Banner</label>
+                <input type="url" class="form-control p-2" id="urlbanner" name="urlbanner"
+                    [(ngModel)]="persona.urlbanner" required aria-describedby="bannerformat">
+                <div id="bannerformat" class="form-text">URL de la imagen o gif</div>
+            </div>
+            <div class="mb-3">
+                <label for="urlfoto" class="form-label">Url Foto</label>
+                <input type="url" class="form-control p-2" id="urlfoto" name="urlfoto" [(ngModel)]="persona.urlfoto"
+                    required aria-describedby="fotoformat">
+                <div id="fotoformat" class="form-text">URL de la imagen</div>
+            </div>
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control p-2" id="nombre" name="nombre" [(ngModel)]="persona.nombre"
+                        required aria-describedby="nombreformat">
+                    <div id="nombreformat" class="form-text">Max. 10 caracteres</div>
+                </div>
+                <div class="col-6 mb-3">
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input type="text" class="form-control p-2" id="apellido" name="apellido"
+                        [(ngModel)]="persona.apellido" required aria-describedby="apellidoformat">
+                    <div id="apellidoformat" class="form-text">Max. 10 caracteres</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="ocupacion" class="form-label">Ocupación</label>
+                <input type="text" class="form-control p-2" id="ocupacion" name="ocupacion"
+                    [(ngModel)]="persona.ocupacion" required>
+            </div>
+            <button type="submit" class="btn save d-block ms-auto mb-3">Guardar</button>
+        </form>
+    </div>
+</div>

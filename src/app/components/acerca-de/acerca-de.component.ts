@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Persona } from 'src/app/model/persona';
 import { PersonaService } from 'src/app/service/persona.service';
 import { TokenService } from 'src/app/service/token.service';
@@ -12,8 +13,8 @@ export class AcercaDeComponent implements OnInit {
   persona: Persona;
   isLogged = false;
 
-  constructor(private personaS: PersonaService, private tokenS: TokenService) { }
-  
+  constructor(private personaS: PersonaService, private tokenS: TokenService, private router: Router) { }
+
   ngOnInit(): void {
     this.cargarPersona();
     if (this.tokenS.getToken()) {
@@ -23,12 +24,20 @@ export class AcercaDeComponent implements OnInit {
     }
   }
 
-  cargarPersona(): void{
+  cargarPersona(): void {
     this.personaS.detail(1).subscribe(
       data => {
         this.persona = data;
       }
     )
   }
-  
+
+  editAcercade() {
+    this.router.navigate(['/editAcercade/{{Persona.id}}']);
+  }
+
+  editInfopersonal() {
+    this.router.navigate(['/editInfopersona/{{Persona.id}}']);
+  }
+
 }

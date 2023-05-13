@@ -1,0 +1,34 @@
+<!-- Formulario edición Información personal -->
+<div class="container-fluid">
+    <div class="container fondo shadow">
+        <form (ngSubmit)="onUpdateInfopersonal()" novalidate #f="ngForm" class="p-4">
+            <div class="d-grid d-md-flex justify-content-md-end">
+                <button type="button" class="btn-close fs-5 me-md-2" aria-label="Close" routerLink="/"></button>
+            </div>
+            <h3>Datos Información personal</h3>
+            <p style="margin-bottom: 24px; color: gray;" class="text-center">Completa los campos que deseas modificar.
+            </p>
+            <div class="mb-3">
+                <label for="fechanac" class="form-label">Fecha de nacimiento</label>
+                <input type="text" class="form-control p-2" id="fechanac" name="fechanac" [(ngModel)]="persona.fechanac"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control p-2" id="email" name="email" [(ngModel)]="persona.email"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label for="celular" class="form-label">Celular</label>
+                <input type="text" class="form-control p-2" id="celular" name="celular" [(ngModel)]="persona.celular"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label for="paisresidencia" class="form-label">País de residencia</label>
+                <input type="text" class="form-control p-2" id="paisresidencia" name="paisresidencia"
+                    [(ngModel)]="persona.paisresidencia" required>
+            </div>
+            <button type="submit" class="btn save d-block ms-auto mb-3">Guardar</button>
+        </form>
+    </div>
+</div>

@@ -3,113 +3,100 @@
 
     <h2 class="mb-3 d-inline-block">Hard and Soft Skills</h2>
     <!-- Botón Agregar Skills/Idioma -->
-    <button class="boton-add" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasAddSkillsIdioma" aria-controls="offcanvasNavbar">
+    <button class="boton-add" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasAddSkillsIdioma"
+        aria-controls="offcanvasNavbar">
         <i class="bi bi-plus-square fs-3 ms-5"></i>
     </button>
     <!-- Formulario Agregar Skills/Idioma -->
-    <div class="offcanvas offcanvas-end" data-bs-backdrop="static" data-bs-scroll="true" tabindex="-1" id="offcanvasAddSkillsIdioma" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas offcanvas-end" data-bs-backdrop="static" data-bs-scroll="true" tabindex="-1"
+        id="offcanvasAddSkillsIdioma" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
             <h4 class="offcanvas-title" id="offcanvasNavbarLabel">Skills / Idiomas</h4>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <p style="margin-bottom: 36px; color: gray;" class="text-center">Seleccione el tipo de elemento que desea agregar.</p>
+            <p style="margin-bottom: 36px; color: gray;" class="text-center">Seleccione el tipo de elemento que desea
+                agregar.</p>
             <div class="d-grid gap-5 mx-auto">
-                <button class="btn btn-lg" type="button" data-bs-toggle="offcanvas" data-bs-target="#addSoftSkill" aria-controls="staticBackdrop" routerLink="/nuevasoftskill">Soft skills</button> 
-                <button class="btn btn-lg" type="button" data-bs-toggle="offcanvas" data-bs-target="#addHardSkill" aria-controls="staticBackdrop" routerLink="/nuevahardskill">Hard Skills</button>
-                <button class="btn btn-lg" type="button" data-bs-toggle="offcanvas" data-bs-target="#addIdioma" aria-controls="staticBackdrop" routerLink="/nuevoidioma">Idiomas</button>
+                <button class="btn btn-lg" type="button" data-bs-toggle="offcanvas" data-bs-target="#addSoftSkill"
+                    aria-controls="staticBackdrop" routerLink="/nuevasoftskill">Soft skills</button>
+                <button class="btn btn-lg" type="button" data-bs-toggle="offcanvas" data-bs-target="#addHardSkill"
+                    aria-controls="staticBackdrop" routerLink="/nuevahardskill">Hard Skills</button>
+                <button class="btn btn-lg" type="button" data-bs-toggle="offcanvas" data-bs-target="#addIdioma"
+                    aria-controls="staticBackdrop" routerLink="/nuevoidioma">Idiomas</button>
             </div>
         </div>
     </div>
 
     <span class="line"></span>
 
-        
-
     <div class="row ms-3 me-3">
-        <div  class="col-12 col-sm-4 ps-2 pe-2 mt-sm-2 mb-sm-2 mb-3">
-            
+        <div class="col-12 col-sm-4 ps-2 pe-2 mt-sm-2 mb-sm-2 mb-3">
             <h3 class="d-inline-block">Soft Skills
             </h3>
-            
-
             <ul class="list-unstyled">
                 <li *ngFor="let Softskill of softskill">
                     <h4 class="d-inline-block">{{Softskill.nombre}}</h4>
                     <!-- Botón edición Softskill -->
-                    <button class="boton-edit" type="button">
+                    <button class="boton-edit" type="button" *ngIf="isLogged"
+                        routerLink="/editSoftskill/{{Softskill.id}}">
                         <i class="bi bi-pencil-square fs-5"></i>
                     </button>
                     <!-- Botón eliminar Softskill -->
-                    <button class="boton-delete" type="button" (click)="deleteSoftSkill(Softskill.id)">
+                    <button class="boton-delete" type="button" *ngIf="isLogged" (click)="deleteSoftSkill(Softskill.id)">
                         <i class="bi bi-x-square fs-5"></i>
                     </button>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar"
-                    [attr.aria-valuenow]="Softskill.porcentaje" 
-                    [style.width]="Softskill.porcentaje+'%'" 
-                    aria-valuemin="0" aria-valuemax="100"> 
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" [attr.aria-valuenow]="Softskill.porcentaje"
+                            [style.width]="Softskill.porcentaje+'%'" aria-valuemin="0" aria-valuemax="100">
+                        </div>
                     </div>
-                </div>
                 </li>
             </ul>
-                
         </div>
-
-        <div   class="ol-12 col-sm-4 mt-sm-2 mb-sm-2 mb-3">
+        <div class="ol-12 col-sm-4 mt-sm-2 mb-sm-2 mb-3">
             <h3 class="d-inline-block">Hard Skills
             </h3>
-            
-
             <ul class="list-unstyled">
                 <li *ngFor="let Hardskill of hardskill">
                     <h4 class="d-inline-block">{{Hardskill.nombre}}</h4>
                     <!-- Botón edición Hardskill -->
-                    <button class="boton-edit" type="button">
+                    <button class="boton-edit" type="button" *ngIf="isLogged"
+                        routerLink="/editHardskill/{{Hardskill.id}}">
                         <i class="bi bi-pencil-square fs-5"></i>
                     </button>
                     <!-- Botón eliminar Softskill -->
-                    <button class="boton-delete" type="button" (click)="deleteHardSkill(Hardskill.id)">
+                    <button class="boton-delete" type="button" *ngIf="isLogged" (click)="deleteHardSkill(Hardskill.id)">
                         <i class="bi bi-x-square fs-5"></i>
                     </button>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" 
-                    [attr.aria-valuenow]="Hardskill.porcentaje" 
-                    [style.width]="Hardskill.porcentaje+'%'"
-                    aria-valuemin="0" aria-valuemax="100"> </div>
-                </div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" [attr.aria-valuenow]="Hardskill.porcentaje"
+                            [style.width]="Hardskill.porcentaje+'%'" aria-valuemin="0" aria-valuemax="100"> </div>
+                    </div>
                 </li>
             </ul>
-
-                
         </div>
-
         <div class="col-12 col-sm-4 mt-sm-2 mb-sm-2">
-            <h3 >Idioma
+            <h3>Idioma
             </h3>
-            
-
             <div class="row">
-                    <div class="col-6 ps-0 pe-0" *ngFor="let Idioma of idioma">
-                        <h4 class="idioma d-inline-block">{{Idioma.nombre}}</h4>
-                        <!-- Botón edición Idioma -->
-                    <button class="boton-edit" type="button">
+                <div class="col-6 ps-0 pe-0" *ngFor="let Idioma of idioma">
+                    <h4 class="idioma d-inline-block">{{Idioma.nombre}}</h4>
+                    <!-- Botón edición Idioma -->
+                    <button class="boton-edit" type="button" *ngIf="isLogged" routerLink="/editIdioma/{{Idioma.id}}">
                         <i class="bi bi-pencil-square fs-5"></i>
                     </button>
                     <!-- Botón eliminar Idioma -->
-                    <button class="boton-delete" type="button" (click)="deleteIdioma(Idioma.id)">
+                    <button class="boton-delete" type="button" *ngIf="isLogged" (click)="deleteIdioma(Idioma.id)">
                         <i class="bi bi-x-square fs-5"></i>
                     </button>
-                        <ul class="idioma-comp list-unstyled ms-3">
-                            <li class="idioma-skills">Escritura: <span>{{Idioma.escritura}}</span></li>
-                            <li class="idioma-skills">Lectura: <span>{{Idioma.lectura}}</span></li>
-                            <li class="idioma-skills">Oralidad: <span>{{Idioma.oralidad}}</span></li>
-                        </ul>
-                    </div>
-                    
+                    <ul class="idioma-comp list-unstyled ms-3">
+                        <li class="idioma-skills">Escritura: <span>{{Idioma.escritura}}</span></li>
+                        <li class="idioma-skills">Lectura: <span>{{Idioma.lectura}}</span></li>
+                        <li class="idioma-skills">Oralidad: <span>{{Idioma.oralidad}}</span></li>
+                    </ul>
                 </div>
             </div>
+        </div>
     </div>
-
-
 </section>

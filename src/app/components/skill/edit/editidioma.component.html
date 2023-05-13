@@ -1,0 +1,37 @@
+<!-- Formulario edición Idioma-->
+<div class="container-fluid">
+    <div class="container fondo shadow">
+        <form (ngSubmit)="onUpdateIdioma()" novalidate #f="ngForm" class="p-4">
+            <div class="d-grid d-md-flex justify-content-md-end">
+                <button type="button" class="btn-close fs-5 me-md-2" aria-label="Close" routerLink="/"></button>
+            </div>
+            <h3>Datos Idioma</h3>
+            <p style="margin-bottom: 24px; color: gray;" class="text-center">Completa los campos que deseas modificar.
+            </p>
+            <div class="mb-4">
+                <label for="nombre" class="form-label">Nombre del idioma</label>
+                <input type="text" class="form-control p-2" id="nombre" name="nombre" [(ngModel)]="idioma.nombre"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label for="escritura" class="form-label">Escritura</label>
+                <input type="text" class="form-control p-2" id="escritura" name="escritura"
+                    [(ngModel)]="idioma.escritura" required aria-describedby="textformat">
+                <div id="textformat" class="form-text">nativo, principiante, intermedio, avanzado</div>
+            </div>
+            <div class="mb-3">
+                <label for="lectura" class="form-label">Lectura</label>
+                <input type="text" class="form-control p-2" id="lectura" name="lectura" [(ngModel)]="idioma.lectura"
+                    required aria-describedby="textformat">
+                <div id="textformat" class="form-text">nativo, principiante, intermedio, avanzado</div>
+            </div>
+            <div class="mb-3">
+                <label for="oralidad" class="form-label">Oralidad</label>
+                <input type="text" class="form-control p-2" id="oralidad" name="oralidad" [(ngModel)]="idioma.oralidad"
+                    required aria-describedby="textformat">
+                <div id="textformat" class="form-text">nativo, principiante, intermedio, avanzado</div>
+            </div>
+            <button type="submit" class="btn save d-block ms-auto mb-3">Guardar</button>
+        </form>
+    </div>
+</div>

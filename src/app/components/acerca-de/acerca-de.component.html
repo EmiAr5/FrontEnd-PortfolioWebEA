@@ -5,7 +5,7 @@
         <div class="col-6 info-el ad" *ngIf="persona">
             <h2 class="mb-3 d-inline-block titulo-info">Acerca de</h2>
             <!-- Botón edición Acerca de -->
-            <button class="boton-edit" type="button" *ngIf="isLogged">
+            <button class="boton-edit" type="button" *ngIf="isLogged" (click)="editAcercade()">
                 <i class="bi bi-pencil-square fs-4  ms-lg-3"></i>
             </button>
             <span class="line"></span>
@@ -13,28 +13,23 @@
             <h4> {{persona.ocupacion}} </h4>
             <p> {{persona.acercade}} </p>
         </div>
-
         <!-- Columna Información personal -->
         <div class="col-6 info-el">
             <h2 class="mb-3 d-inline-block titulo-info">Información personal</h2>
-
             <!-- Botón edición Información personal -->
-            <button class="boton-edit" type="button" *ngIf="isLogged">
+            <button class="boton-edit" type="button" *ngIf="isLogged" (click)="editInfopersonal()">
                 <i class="bi bi-pencil-square fs-4 ms-lg-3"></i>
             </button>
-
             <span class="line"></span>
-
             <ul class="list-unstyled" *ngIf="persona">
                 <li class="mb-3">
                     <span class="list-title">
-                        Cumpleaños:
+                        Fecha de nacimiento:
                     </span>
                     <span>
                         {{persona.fechanac}}
                     </span>
                 </li>
-
                 <li class="mb-3">
                     <span class="list-title">
                         Email:
@@ -43,7 +38,6 @@
                         {{persona.email}}
                     </span>
                 </li>
-
                 <li class="mb-3">
                     <span class="list-title">
                         Celular:
@@ -52,7 +46,6 @@
                         {{persona.celular}}
                     </span>
                 </li>
-
                 <li>
                     <span class="list-title">
                         País de residencia:

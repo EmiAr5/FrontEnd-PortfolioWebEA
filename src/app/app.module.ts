@@ -14,6 +14,15 @@ import { ProyectoComponent } from './components/proyecto/proyecto.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { interceptorProvider } from './service/interceptor-service';
+import { EditheaderComponent } from './components/header/editheader.component';
+import { EditacercadeComponent } from './components/acerca-de/editacercade.component';
+import { EditeducacionComponent } from './components/educacion/editeducacion.component';
+import { EditexperienciaComponent } from './components/experiencia/editexperiencia.component';
+import { EditproyectoComponent } from './components/proyecto/editproyecto.component';
+import { EditinfopersonalComponent } from './components/acerca-de/editinfopersonal.component';
+import { EditsoftskillComponent } from './components/skill/edit/editsoftskill.component';
+import { EdithardskillComponent } from './components/skill/edit/edithardskill.component';
+import { EditidiomaComponent } from './components/skill/edit/editidioma.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +34,16 @@ import { interceptorProvider } from './service/interceptor-service';
     SkillComponent,
     ProyectoComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    EditheaderComponent,
+    EditacercadeComponent,
+    EditeducacionComponent,
+    EditexperienciaComponent,
+    EditproyectoComponent,
+    EditinfopersonalComponent,
+    EditsoftskillComponent,
+    EdithardskillComponent,
+    EditidiomaComponent
   ],
   imports: [
     BrowserModule,

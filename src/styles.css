@@ -113,10 +113,16 @@ form input.form-check-input:checked {
     border-color: #8f68b6 !important;
 }
 
-.offcanvas-body form .save {
+form .save {
     background-color: #7843ad;
     border-color: #7843ad;
     color: white;
+}
+
+form .save:hover{
+    background-color: transparent;
+    border-color: #7843ad;
+    color: #7843ad;
 }
 
 

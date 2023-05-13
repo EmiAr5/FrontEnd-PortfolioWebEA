@@ -43,4 +43,8 @@ export class HeaderComponent implements OnInit {
     location.reload();
   }
 
+  editHeader() {
+    this.router.navigate(['/editHeader/{{Persona.id}}']);
+  }
+
 }

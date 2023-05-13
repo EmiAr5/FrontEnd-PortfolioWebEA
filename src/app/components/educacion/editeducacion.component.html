@@ -1,0 +1,55 @@
+<!-- Formulario edición Educacion-->
+<div class="container-fluid">
+    <div class="container fondo shadow">
+        <form (ngSubmit)="onUpdateEducacion()" novalidate #f="ngForm" class="p-4">
+            <div class="d-grid d-md-flex justify-content-md-end">
+                <button type="button" class="btn-close fs-5 me-md-2" aria-label="Close" routerLink="/"></button>
+            </div>
+            <h3>Datos Educación</h3>
+            <p style="margin-bottom: 24px; color: gray;" class="text-center">Completa los campos que deseas modificar.
+            </p>
+            <div class="mb-4">
+                <label for="institucion" class="form-label">Institucion</label>
+                <input type="text" class="form-control p-2" id="institucion" name="institucion"
+                    [(ngModel)]="educacion.institucion" required>
+            </div>
+            <div class="row mb-3">
+                <div class="col-5 mb-3">
+                    <label for="carrera" class="form-label">Carrera</label>
+                    <input type="text" class="form-control p-2" id="carrera" name="carrera"
+                        [(ngModel)]="educacion.carrera" required>
+                </div>
+                <div class="col-5 mb-3">
+                    <label for="tituloobtenido" class="form-label">Titulo obtenido</label>
+                    <input type="text" class="form-control p-2" id="tituloobtenido" name="tituloobtenido"
+                        [(ngModel)]="educacion.tituloobtenido" required>
+                </div>
+                <div class="col-2 mb-3">
+                    <label for="puntaje" class="form-label">Puntaje</label>
+                    <input type="text" class="form-control p-2" id="puntaje" name="puntaje"
+                        [(ngModel)]="educacion.puntaje" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-6 mb-3">
+                    <label for="fechainicio" class="form-label">Fecha de inicio</label>
+                    <input class="form-control p-2" id="fechainicio" type="text" name="fechaincio"
+                        [(ngModel)]="educacion.fechainicio" required>
+                </div>
+                <div class="col-6 mb-3">
+                    <label for="fechafin" class="form-label">Fecha de fin</label>
+                    <input class="form-control p-2" id="fechafin" type="text" name="fechafin"
+                        [(ngModel)]="educacion.fechafin" required aria-describedby="fechafinformat">
+                    <div id="fechafinformat" class="form-text">Si estas cursando esta carrera escribe Actual</div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="urllogoinst" class="form-label">Logo de la Institucion</label>
+                <input class="form-control p-2" id="urllogoinst" type="url" name="urllogoinst"
+                    [(ngModel)]="educacion.urllogoinst" required aria-describedby="logoformat">
+                <div id="logoformat" class="form-text">URL de la imagen o gif</div>
+            </div>
+            <button type="submit" class="btn save d-block ms-auto mb-3">Guardar</button>
+        </form>
+    </div>
+</div>
