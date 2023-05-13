@@ -10,24 +10,24 @@
     <span class="line"></span>
 
     <div class="row row-cols-1 row-cols-sm-2 g-4 ms-3 me-3">
-        <div class="col d-flex">
+        <div class="col d-flex" *ngFor="let Proyecto of proyecto">
             <div class="card align-self-stretch">
-                <a href="" target="_blank"> <img src="" class="card-img-top" alt="..."> </a>
+                <a href="{{Proyecto.enlace}}" target="_blank"> <img [src]="Proyecto.urlimagen" class="card-img-top" alt="..."> </a>
                 <div class="card-body">
-                    <h3 class="card-title d-inline-block">Portfolio Argentina Programa</h3>
+                    <h3 class="card-title d-inline-block">{{Proyecto.nombre}}</h3>
                     <!-- Botón edición Proyecto-->
                     <button class="boton-edit" type="button">
                         <i class="bi bi-pencil-square fs-5"></i>
                     </button>
                     <!-- Botón eliminar Proyecto-->
-                    <button class="boton-delete" type="button">
+                    <button class="boton-delete" type="button" (click)="deleteProyecto(Proyecto.id)">
                         <i class="bi bi-x-square fs-5"></i>
                     </button>
                     <h4 class="card-subtitle">
-                        <time> 2022 </time> &nbsp; - &nbsp; <time> 2023 </time>
+                        <time> {{Proyecto.fechainicio}} </time> &nbsp; - &nbsp; <time> {{Proyecto.fechafin}} </time>
                     </h4>
                     <p class="card-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe animi sapiente nulla incidunt, eos rem eum delectus necessitatibus autem! Ipsa sapiente velit voluptas adipisci eaque officia neque tempore in nobis.
+                        {{Proyecto.descripcion}}
                     </p>
                 </div>
             </div>
