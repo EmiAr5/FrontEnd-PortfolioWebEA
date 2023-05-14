@@ -13,23 +13,23 @@ export class IdiomaService {
 
   constructor(private http: HttpClient) { }
 
-  public list(): Observable<Idioma[]>{
+  public list(): Observable<Idioma[]> {
     return this.http.get<Idioma[]>(this.URL + 'lista');
   }
 
-  public detail(id: number): Observable<Idioma>{
+  public detail(id: number): Observable<Idioma> {
     return this.http.get<Idioma>(this.URL + `detalle/${id}`);
   }
 
-  public save(idioma: Idioma): Observable<any> { 
+  public save(idioma: Idioma): Observable<any> {
     return this.http.post<any>(this.URL + 'nuevo', idioma);
   }
 
-  public update(id: number, idioma: Idioma): Observable<any>{
+  public update(id: number, idioma: Idioma): Observable<any> {
     return this.http.put<any>(this.URL + `modificar/${id}`, idioma);
   }
 
-  public delete(id: number): Observable<any> { 
+  public delete(id: number): Observable<any> {
     return this.http.delete<any>(this.URL + `borrar/${id}`);
   }
 }

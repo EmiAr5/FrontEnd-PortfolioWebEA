@@ -21,7 +21,7 @@ export class AddhardskillComponent implements OnInit {
     this.hardskillS.save(hardskill).subscribe(
       data => {
         alert("Hard Skill creada correctamente");
-        this.router.navigate(['/#Skills']);
+        this.router.navigate(['']);
       }, err => {
         alert("Hard Skill no pudo ser creada");
         this.router.navigate(['']);

@@ -13,7 +13,7 @@ export class AuthService {
   URL = environment.URL + 'auth/';
   constructor(private httpClient: HttpClient) { }
 
-  public login(loginUsuario: LoginUsuario): Observable<JwtDto>{
+  public login(loginUsuario: LoginUsuario): Observable<JwtDto> {
     return this.httpClient.post<JwtDto>(this.URL + 'login', loginUsuario);
   }
 }

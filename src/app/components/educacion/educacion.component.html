@@ -17,12 +17,12 @@
                 <div class="col-md-9">
                     <div class="card-body">
                         <h3 class="card-title d-inline-block mb-3"> {{Educacion.institucion}} </h3>
-                        <!-- Botón edición Experiencia -->
+                        <!-- Botón edición Educación -->
                         <button class="boton-edit" type="button" *ngIf="isLogged"
                             routerLink="/editEducacion/{{Educacion.id}}">
                             <i class="bi bi-pencil-square fs-5"></i>
                         </button>
-                        <!-- Botón eliminar Experiencia -->
+                        <!-- Botón eliminar Educación -->
                         <button class="boton-delete" type="button" *ngIf="isLogged"
                             (click)="deleteEducacion(Educacion.id)">
                             <i class="bi bi-x-square fs-5"></i>

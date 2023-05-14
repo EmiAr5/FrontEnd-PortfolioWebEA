@@ -8,8 +8,8 @@ import { Observable } from "rxjs";
 })
 export class InterceptorService {
     constructor(private tokenS: TokenService) { }
-    
-    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>{
+
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         let intReq = req;
         const token = this.tokenS.getToken();
         if (token != null) {
