@@ -22,7 +22,7 @@ export class ExperienciaService {
   }
 
   public save(experiencia: Experiencia): Observable<any> { 
-    return this.http.post<any>(this.URL + 'new', experiencia);
+    return this.http.post<any>(this.URL + 'nueva', experiencia);
   }
 
   public update(id: number, experiencia: Experiencia): Observable<any>{

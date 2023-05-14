@@ -22,7 +22,7 @@ export class ProyectoService {
   }
 
   public save(proyecto: Proyecto): Observable<any> { 
-    return this.http.post<any>(this.URL + 'new', proyecto);
+    return this.http.post<any>(this.URL + 'nuevo', proyecto);
   }
 
   public update(id: number, proyecto: Proyecto): Observable<any>{

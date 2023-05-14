@@ -21,7 +21,7 @@ export class EducacionService {
   }
 
   public save(educacion: Educacion): Observable<any> { 
-    return this.http.post<any>(this.URL + 'new', educacion);
+    return this.http.post<any>(this.URL + 'nueva', educacion);
   }
 
   public update(id: number, educacion: Educacion): Observable<any>{

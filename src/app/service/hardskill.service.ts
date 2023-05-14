@@ -21,7 +21,7 @@ export class HardskillService {
   }
 
   public save(hardskill: Hardskill): Observable<any> { 
-    return this.http.post<any>(this.URL + 'new', hardskill);
+    return this.http.post<any>(this.URL + 'nueva', hardskill);
   }
 
   public update(id: number, hardskill: Hardskill): Observable<any>{

@@ -1,46 +1,46 @@
 <!-- Formulario edición Experiencia-->
-<div class="container-fluid">
+<div class="container-fluid imgfondo">
     <div class="container fondo shadow">
-        <form (ngSubmit)="onUpdateExperiencia()" novalidate #f="ngForm" class="p-4">
-            <div class="d-grid d-md-flex justify-content-md-end">
+        <form (ngSubmit)="onUpdateExperiencia()" novalidate #f="ngForm" class="p-xl-4 p-2">
+            <div class="d-grid d-flex justify-content-end">
                 <button type="button" class="btn-close fs-5 me-md-2" aria-label="Close" routerLink="/"></button>
             </div>
             <h3>Datos Experiencia</h3>
-            <p style="margin-bottom: 24px; color: gray;" class="text-center">Completa los campos que deseas modificar.
+            <p style="margin-bottom: 20px; color: gray;" class="text-center">Completa los campos que deseas modificar.
             </p>
-            <div class="row">
-                <div class="col-6 mb-3">
-                    <label for="compania" class="form-label">Nombre de la Empresa</label>
-                    <input type="text" class="form-control" id="compania" name="compania"
+            <div class="row mb-0">
+                <div class="col-6 mb-xl-3 mb-1">
+                    <label for="compania" class="form-label">Empresa</label>
+                    <input type="text" class="form-control p-2" id="compania" name="compania"
                         [(ngModel)]="experiencia.compania" required>
                 </div>
-                <div class="col-6 mb-3">
+                <div class="col-6 mb-xl-3 mb-1">
                     <label for="puesto" class="form-label">Puesto</label>
-                    <input type="text" class="form-control" id="puesto" name="puesto" [(ngModel)]="experiencia.puesto"
-                        required>
+                    <input type="text" class="form-control p-2" id="puesto" name="puesto" 
+                        [(ngModel)]="experiencia.puesto" required>
                 </div>
             </div>
-            <div class="mb-4">
+            <div class="mb-xl-3 mb-1">
                 <label for="urllogocomp" class="form-label">Logo de la Empresa</label>
-                <input class="form-control form-control-sm" id="urllogocomp" type="url" name="urllogocomp"
+                <input class="form-control p-2" id="urllogocomp" type="url" name="urllogocomp"
                     [(ngModel)]="experiencia.urllogocomp" required>
             </div>
-            <div class="row">
-                <div class="col-6 mb-3">
+            <div class="row mb-0">
+                <div class="col-6 mb-1 mb-xl-3 mb-1">
                     <label for="fechainicio" class="form-label">Fecha de inicio</label>
-                    <input class="form-control form-control-sm" id="fechainicio" type="text" name="fechaincio"
+                    <input class="form-control p-2" id="fechainicio" type="text" name="fechaincio"
                         [(ngModel)]="experiencia.fechainicio" required>
                 </div>
-                <div class="col-6 mb-3">
+                <div class="col-6 mb-1 mb-xl-3">
                     <label for="fechafin" class="form-label">Fecha de fin</label>
-                    <input class="form-control form-control-sm" id="fechafin" type="text" name="fechafin"
+                    <input class="form-control p-2" id="fechafin" type="text" name="fechafin" 
                         [(ngModel)]="experiencia.fechafin" required aria-describedby="fechafinformat">
                     <div id="fechafinformat" class="form-text">Si es tu trabajo actual escribe Actual</div>
                 </div>
             </div>
-            <div class="mb-3">
+            <div class="mb-xl-3">
                 <label for="descripciontrabajo" class="form-label">Descripción de actividades</label>
-                <textarea class="form-control" id="descripciontrabajo" name="descripciontrabajo" rows="4"
+                <textarea class="form-control p-2" id="descripciontrabajo" name="descripciontrabajo" rows="4"
                     [(ngModel)]="experiencia.descripciontrabajo" required
                     aria-describedby="descripcionformat"></textarea>
                 <div id="descripcionformat" class="form-text">Max. 300 caracteres</div>

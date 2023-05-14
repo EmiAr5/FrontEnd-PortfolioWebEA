@@ -29,7 +29,7 @@ export class AddeducacionComponent implements OnInit {
         alert("Educacion creada correctamente");
         this.router.navigate(['']);
       }, err => {
-        alert("Educacionno pudo ser creada");
+        alert("Educacion no pudo ser creada");
         this.router.navigate(['']);
       }
     )

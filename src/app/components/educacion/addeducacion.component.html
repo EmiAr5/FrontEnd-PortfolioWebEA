@@ -1,36 +1,37 @@
 <!-- Formulario agregar Educacion-->
 <div class="container-fluid imgfondo">
     <div class="container fondo shadow">
-        <form (ngSubmit)="onCreateEducacion()" novalidate #f="ngForm" class="p-4">
-            <div class="d-grid d-md-flex justify-content-md-end">
+        <form (ngSubmit) = "onCreateEducacion()" novalidate #f="ngForm" class="p-md-4 p-1">
+            <div class="d-grid d-flex justify-content-end">
                 <button type="button" class="btn-close fs-5 me-md-2" aria-label="Close" routerLink="/"></button>
             </div>
             <h3>Agregar Educación</h3>
             <p style="margin-bottom: 24px; color: gray;" class="text-center">Todos los campos son obligatorios.
             </p>
-            <div class="mb-4">
-                <label for="institucion" class="form-label">Institucion</label>
-                <input type="text" class="form-control p-2" id="institucion" name="institucion" placeholder="Nombre de la institución educativa"
+            <div class="row">
+            <div class="col-6 col-md-12 mb-3">
+                <label for="institucion" class="form-label">Institución</label>
+                <input type="text" class="form-control p-2" id="institucion" name="institucion"
                     [(ngModel)]="institucion" required>
             </div>
-            <div class="row mb-3">
-                <div class="col-5 mb-3">
+            
+                <div class="col-6 col-md-5 mb-3">
                     <label for="carrera" class="form-label">Carrera</label>
-                    <input type="text" class="form-control p-2" id="carrera" name="carrera" placeholder="Carrera estudiada"
+                    <input type="text" class="form-control p-2" id="carrera" name="carrera"
                         [(ngModel)]="carrera" required>
                 </div>
-                <div class="col-5 mb-3">
-                    <label for="tituloobtenido" class="form-label">Titulo obtenido</label>
-                    <input type="text" class="form-control p-2" id="tituloobtenido" name="tituloobtenido" placeholder="Título obtenido"
+                <div class="col-6 col-md-5 mb-3">
+                    <label for="tituloobtenido" class="form-label">Título</label>
+                    <input type="text" class="form-control p-2" id="tituloobtenido" name="tituloobtenido"
                         [(ngModel)]="tituloobtenido" required>
                 </div>
-                <div class="col-2 mb-3">
-                    <label for="puntaje" class="form-label">Puntaje</label>
-                    <input type="text" class="form-control p-2" id="puntaje" name="puntaje" placeholder="Promedio final"
+                <div class="col-md-2 col-6 mb-3">
+                    <label for="puntaje" class="form-label">Promedio</label>
+                    <input type="text" class="form-control p-2" id="puntaje" name="puntaje"
                         [(ngModel)]="puntaje" required>
                 </div>
             </div>
-            <div class="row mb-3">
+            <div class="row">
                 <div class="col-6 mb-3">
                     <label for="fechainicio" class="form-label">Fecha de inicio</label>
                     <input class="form-control p-2" id="fechainicio" type="text" name="fechaincio"
@@ -43,13 +44,13 @@
                     <div id="fechafinformat" class="form-text">Si estas cursando esta carrera escribe Actual</div>
                 </div>
             </div>
-            <div class="mb-4">
+            <div class="mb-3">
                 <label for="urllogoinst" class="form-label">Logo de la Institucion</label>
                 <input class="form-control p-2" id="urllogoinst" type="url" name="urllogoinst" placeholder="http://..."
                     [(ngModel)]="urllogoinst" required aria-describedby="logoformat">
                 <div id="logoformat" class="form-text">URL de la imagen o gif</div>
             </div>
-            <button type="submit" class="btn save d-block ms-auto mb-3">Agregar</button>
+            <button type="submit" class="btn save d-block ms-auto mb-2">Agregar</button>
         </form>
     </div>
 </div>

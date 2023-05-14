@@ -26,7 +26,7 @@ export class PersonaService {
   }
 
   public save(persona: Persona): Observable<any> { 
-    return this.http.post<any>(this.URL + 'new', persona);
+    return this.http.post<any>(this.URL + 'nueva', persona);
   }
 
   public update(id: number, persona: Persona): Observable<any>{

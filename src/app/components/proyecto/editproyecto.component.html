@@ -1,47 +1,49 @@
 <!-- Formulario edición Proyecto-->
-<div class="container-fluid">
+<div class="container-fluid imgfondo">
     <div class="container fondo shadow">
-        <form (ngSubmit)="onUpdateProyecto()" novalidate #f="ngForm" class="p-4">
-            <div class="d-grid d-md-flex justify-content-md-end">
-                <button type="button" class="btn-close fs-5 me-md-2" aria-label="Close" routerLink="/"></button>
+        <form (ngSubmit)="onUpdateProyecto()" novalidate #f="ngForm" class="p-lg-4 p-1">
+            <div class="d-grid d-flex justify-content-end">
+                <button type="button" class="btn-close fs-5" aria-label="Close" routerLink="/"></button>
             </div>
             <h3>Datos Proyecto</h3>
-            <p style="margin-bottom: 24px; color: gray;" class="text-center">Completa los campos que deseas modificar.
+            <p style="margin-bottom: 16px; color: gray;" class="text-center">Completa los campos que deseas modificar.
             </p>
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre del Proyecto</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="proyecto.nombre"
-                    required>
+                <input type="text" class="form-control p-2" id="nombre" name="nombre" 
+                    [(ngModel)]="proyecto.nombre" required>
             </div>
-            <div class="mb-3">
+            <div class="row mb-0">
+            <div class="col-6 mb-3">
                 <label for="enlace" class="form-label">Enlace al proyecto</label>
-                <input type="text" class="form-control" id="enlace" name="enlace" [(ngModel)]="proyecto.enlace"
-                    required>
+                <input type="text" class="form-control p-2" id="enlace" name="enlace" 
+                    [(ngModel)]="proyecto.enlace" required>
             </div>
-            <div class="mb-3">
+            <div class="col-6 mb-3">
                 <label for="urlimagen" class="form-label">Imagen del proyecto</label>
-                <input class="form-control" id="urlimagen" type="url" name="urlimagen" [(ngModel)]="proyecto.urlimagen"
-                    required>
+                <input class="form-control" id="urlimagen" type="url" name="urlimagen" 
+                    [(ngModel)]="proyecto.urlimagen" required>
             </div>
-            <div class="row">
+            </div>
+            <div class="row mb-0">
                 <div class="col-6 mb-3">
                     <label for="fechainicio" class="form-label">Fecha de inicio</label>
-                    <input class="form-control form-control-sm" id="fechainicio" type="text" name="fechaincio"
+                    <input class="form-control p-2" id="fechainicio" type="text" name="fechaincio"
                         [(ngModel)]="proyecto.fechainicio" required>
                 </div>
                 <div class="col-6 mb-3">
                     <label for="fechafin" class="form-label">Fecha de fin</label>
-                    <input class="form-control form-control-sm" id="fechafin" type="text" name="fechafin"
+                    <input class="form-control p-2" id="fechafin" type="text" name="fechafin"
                         [(ngModel)]="proyecto.fechafin" required>
                 </div>
             </div>
             <div class="mb-3">
                 <label for="descripcion" class="form-label">Descripción del proyecto</label>
-                <textarea class="form-control" id="descripcion" rows="4" name="descripcion"
+                <textarea class="form-control p-2" id="descripcion" rows="4" name="descripcion"
                     [(ngModel)]="proyecto.descripcion" required aria-describedby="descripcionformat"></textarea>
                 <div id="descripcionformat" class="form-text">Max. 300 caracteres</div>
             </div>
-            <button type="submit" class="btn save d-block ms-auto mb-3">Guardar</button>
+            <button type="submit" class="btn save d-block ms-auto mb-2">Guardar</button>
         </form>
     </div>
 </div>

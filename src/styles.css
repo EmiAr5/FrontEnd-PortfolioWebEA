@@ -14,7 +14,7 @@ body {
 /*general*/
 .container-fluid.secciones {
     border-bottom: 1.5px solid #5FB8B6;
-    padding: 80px 40px;
+    padding: 55px 40px;
 }
 
 h2 {
@@ -53,7 +53,7 @@ p {
     margin-bottom: 2rem !important;
 }
 
-/* Offcanvas estilo */
+/* Agregar y editar información  */
 .boton-add {
     border: none;
     background-color: transparent;
@@ -97,11 +97,6 @@ form select:focus {
     border-color: #8f68b6 !important;
 }
 
-form input.form-check-input:checked {
-    background-color: #8f68b6 !important;
-    border-color: #8f68b6 !important;
-}
-
 #offcanvasAddSkillsIdioma .btn:hover {
     background-color: #8f68b6 !important;
     border-color: #8f68b6 !important;
@@ -126,9 +121,11 @@ form .save:hover{
     color: #7843ad;
 }
 
-div.imgfondo {
+.imgfondo {
     background-image: url("https://i.ibb.co/FYwNW2v/istockphoto-1302561463-612x612.jpg");
-    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     display: flex;
     width: 100vw;
     height: 100vh;
@@ -136,17 +133,32 @@ div.imgfondo {
     align-items: center;
 }
 
-div.fondo {
+.fondo {
     background-color: white;
     border-radius: 2rem;
     width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logincontenedor{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 70%;
+    border-radius: 2rem;
+}
+
+form{
+    width: 100%;
 }
 
 form label {
     color: #59acaa;
     font-weight: bold;
 }
-
 
 /*Responsive Extra Small y Small*/
 @media screen and (max-width:767px) {
@@ -177,12 +189,26 @@ form label {
 
     /* Offcanvas estilo */
     .boton-add .bi {
-        font-size: large !important;
+        font-size: larger !important;
     }
 
+        .boton-edit {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+    
+        .boton-delete {
+            padding-left: 6px;
+            padding-right: 2px;
+        }
+
     .boton-edit .bi {
-        font-size: large !important;
+        font-size:larger !important;
     }
+
+        .boton-delete .bi {
+            font-size: larger !important;
+        }
 
 
     /* Header */
@@ -213,7 +239,7 @@ form label {
         margin: 0 !important;
     }
 
-    .navbar.menu .navbar-nav img {
+    img#foto {
         width: 100px !important;
         border: 2px solid white !important;
         left: 70px !important;
@@ -309,6 +335,8 @@ form label {
 
     .main-timeline .title {
         font-size: 16px !important;
+        width: 70% !important;
+        padding-top: 4px !important;
     }
 
     .main-timeline .timeline:nth-child(2n) .content-inner {
@@ -353,8 +381,29 @@ form label {
 
     /* Proyectos */
     #Proyectos .row .col .card h3 {
-        width: 80% !important;
+        width: 75% !important;
     }
+
+        /*Formularios*/
+    
+        .fondo {
+            background-color: white;
+            border-radius: 2rem;
+            width: 95%;
+            height: 95%;
+            display: flex;
+                justify-content: center;
+                align-items: center;
+        }
+                .logincontenedor {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: white;
+                    height: 60%;
+                    border-radius: 2rem;
+                    margin-top: 2rem;
+                }
 }
 
 /*Responsive Medium y Large*/
@@ -386,13 +435,15 @@ form label {
         margin-bottom: 1.5rem !important;
     }
 
-    span.ic-edicion .bi {
-        font-size: large !important;
-    }
+        .boton-edit {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
 
-    span.ic-edicion {
-        margin-left: 14px !important;
-    }
+                .boton-delete {
+                    padding-left: 6px;
+                    padding-right: 2px;
+                }
 
     /* Ofcanvas */
     .navbar.menu .boton-edit {
@@ -401,7 +452,7 @@ form label {
     }
 
     /* Header */
-    .navbar.menu .navbar-nav img {
+    img#foto {
         width: 170px !important;
         border: 2px solid white !important;
         left: 110px !important;
@@ -432,8 +483,8 @@ form label {
 
     /* Experiencia */
     .main-timeline {
-        padding-left: 10px !important;
-        padding-right: 10px !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
     }
 
     .main-timeline .icon {
@@ -455,6 +506,10 @@ form label {
     .main-timeline .content-inner {
         line-height: 18px !important;
     }
+
+        .main-timeline .timeline-content {
+            width: 73% !important;
+        }
 
     /* Educacion */
     #Educacion img {
@@ -478,8 +533,30 @@ form label {
 
     /* Proyectos */
     #Proyectos .row .col .card h3 {
-        width: 85% !important;
+        width: 80% !important;
     }
+
+    /*Formularios*/
+    
+    .fondo {
+            background-color: white;
+            border-radius: 2rem;
+            width: 90%;
+            height: 90%;
+        }
+    
+        .logincontenedor {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            height: 45%;
+            border-radius: 2rem;
+        }
+    
+        form label {
+            color: #59acaa;
+        }
 }
 
 /* header */
@@ -828,11 +905,11 @@ li.brand-txt {
 }
 
 #Educacion .card {
-    max-width: 1000px;
+    max-width: 900px;
 }
 
 #Educacion .card-title {
-    width: 90%;
+    width: 80%;
 }
 
 /*Skills*/

@@ -22,7 +22,7 @@ export class IdiomaService {
   }
 
   public save(idioma: Idioma): Observable<any> { 
-    return this.http.post<any>(this.URL + 'new', idioma);
+    return this.http.post<any>(this.URL + 'nuevo', idioma);
   }
 
   public update(id: number, idioma: Idioma): Observable<any>{

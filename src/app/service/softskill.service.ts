@@ -21,7 +21,7 @@ export class SoftskillService {
   }
 
   public save(softskill: Softskill): Observable<any> { 
-    return this.http.post<any>(this.URL + 'new', softskill);
+    return this.http.post<any>(this.URL + 'nueva', softskill);
   }
 
   public update(id: number, softskill: Softskill): Observable<any>{

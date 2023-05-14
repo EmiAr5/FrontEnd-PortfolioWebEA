@@ -1,17 +1,17 @@
 <!-- Formulario edición Hard-->
-<div class="container-fluid">
+<div class="container-fluid imgfondo">
     <div class="container fondo shadow">
-        <form (ngSubmit)="onUpdateHardskill()" novalidate #f="ngForm" class="p-4">
-            <div class="d-grid d-md-flex justify-content-md-end">
+        <form (ngSubmit)="onUpdateHardskill()" novalidate #f="ngForm" class="p-lg-4 p-1">
+            <div class="d-grid d-flex justify-content-end">
                 <button type="button" class="btn-close fs-5 me-md-2" aria-label="Close" routerLink="/"></button>
             </div>
             <h3>Datos Hard Skill</h3>
             <p style="margin-bottom: 24px; color: gray;" class="text-center">Completa los campos que deseas modificar.
             </p>
-            <div class="mb-4">
+            <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre de la habilidad</label>
-                <input type="text" class="form-control p-2" id="nombre" name="nombre" [(ngModel)]="hardskill.nombre"
-                    required>
+                <input type="text" class="form-control p-2" id="nombre" name="nombre" 
+                    [(ngModel)]="hardskill.nombre" required>
             </div>
             <div class="mb-3">
                 <label for="porcentaje" class="form-label">Grado de dominio</label>
@@ -19,7 +19,7 @@
                     [(ngModel)]="hardskill.porcentaje" required aria-describedby="porcentajeformat">
                 <div id="porcentajeformat" class="form-text">Escribir el número sin decimal y sin el símbolo %</div>
             </div>
-            <button type="submit" class="btn save d-block ms-auto mb-3">Guardar</button>
+            <button type="submit" class="btn save d-block ms-auto mb-2">Guardar</button>
         </form>
     </div>
 </div>
