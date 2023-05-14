@@ -23,6 +23,12 @@ import { EditinfopersonalComponent } from './components/acerca-de/editinfoperson
 import { EditsoftskillComponent } from './components/skill/edit/editsoftskill.component';
 import { EdithardskillComponent } from './components/skill/edit/edithardskill.component';
 import { EditidiomaComponent } from './components/skill/edit/editidioma.component';
+import { AddeducacionComponent } from './components/educacion/addeducacion.component';
+import { AddexperienciaComponent } from './components/experiencia/addexperiencia.component';
+import { AddproyectoComponent } from './components/proyecto/addproyecto.component';
+import { AddsoftskillComponent } from './components/skill/add/addsoftskill.component';
+import { AddhardskillComponent } from './components/skill/add/addhardskill.component';
+import { AddidiomaComponent } from './components/skill/add/addidioma.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +49,13 @@ import { EditidiomaComponent } from './components/skill/edit/editidioma.componen
     EditinfopersonalComponent,
     EditsoftskillComponent,
     EdithardskillComponent,
-    EditidiomaComponent
+    EditidiomaComponent,
+    AddeducacionComponent,
+    AddexperienciaComponent,
+    AddproyectoComponent,
+    AddsoftskillComponent,
+    AddhardskillComponent,
+    AddidiomaComponent
   ],
   imports: [
     BrowserModule,

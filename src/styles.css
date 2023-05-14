@@ -117,12 +117,34 @@ form .save {
     background-color: #7843ad;
     border-color: #7843ad;
     color: white;
+    width: 100%;
 }
 
 form .save:hover{
     background-color: transparent;
     border-color: #7843ad;
     color: #7843ad;
+}
+
+div.imgfondo {
+    background-image: url("https://i.ibb.co/FYwNW2v/istockphoto-1302561463-612x612.jpg");
+    background-size: 100%;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+div.fondo {
+    background-color: white;
+    border-radius: 2rem;
+    width: 60%;
+}
+
+form label {
+    color: #59acaa;
+    font-weight: bold;
 }
 
 

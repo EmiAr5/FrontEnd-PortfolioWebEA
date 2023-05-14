@@ -1,0 +1,25 @@
+<!-- Formulario Agregar Hard Skill-->
+<div class="container-fluid imgfondo">
+    <div class="container fondo shadow">
+        <form (ngSubmit)="onCreateHS()" novalidate #f="ngForm" class="p-4">
+            <div class="d-grid d-md-flex justify-content-md-end">
+                <button type="button" class="btn-close fs-5 me-md-2" aria-label="Close" routerLink="/"></button>
+            </div>
+            <h3>Agregar Hard Skill</h3>
+            <p style="margin-bottom: 24px; color: gray;" class="text-center">Todos los campos son obligatorios.
+            </p>
+            <div class="mb-4">
+                <label for="nombre" class="form-label">Nombre de la habilidad</label>
+                <input type="text" class="form-control p-2" id="nombre" name="nombre" 
+                    [(ngModel)]="nombre" required>
+            </div>
+            <div class="mb-3">
+                <label for="porcentaje" class="form-label">Porcentaje de dominio</label>
+                <input type="number" class="form-control p-2" id="porcentaje" name="porcentaje"
+                    [(ngModel)]="porcentaje" required aria-describedby="porcentajeformat">
+                <div id="porcentajeformat" class="form-text">Escribir el número sin decimal y sin el símbolo %</div>
+            </div>
+            <button type="submit" class="btn save d-block ms-auto mb-3">Agregar</button>
+        </form>
+    </div>
+</div>

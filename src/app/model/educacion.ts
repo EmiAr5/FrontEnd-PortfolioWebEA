@@ -7,6 +7,7 @@ export class Educacion {
     carrera: string;
     tituloobtenido: string;
     puntaje: string;
+    
 
     constructor(urllogoinst: string, institucion: string, fechainicio: string, fechafin: string, carrera: string, tituloobtenido: string, puntaje: string) {
         this.urllogoinst = urllogoinst;

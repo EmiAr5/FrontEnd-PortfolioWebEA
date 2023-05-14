@@ -2,7 +2,7 @@
 <section id="Experiencia" class="container-fluid secciones">
     <h2 class="mb-3 d-inline-block">Experiencia</h2>
     <!-- Botón Agregar Experiencia -->
-    <button class="boton-add" type="button">
+    <button class="boton-add" type="button" *ngIf="isLogged" routerLink="/addExperiencia">
         <i class="bi bi-plus-square fs-3 ms-5" routerLink="/nuevaexperiencia"></i>
     </button>
 

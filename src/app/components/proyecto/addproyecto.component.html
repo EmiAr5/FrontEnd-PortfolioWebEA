@@ -1,0 +1,50 @@
+<!-- Formulario Agregar Proyecto-->
+<div class="container-fluid imgfondo">
+    <div class="container fondo shadow">
+        <form (ngSubmit)="onCreateProyecto()" novalidate #f="ngForm" class="p-4">
+            <div class="d-grid d-md-flex justify-content-md-end">
+                <button type="button" class="btn-close fs-5 me-md-2" aria-label="Close" routerLink="/"></button>
+            </div>
+            <h3>Agregar Proyecto</h3>
+            <p style="margin-bottom: 24px; color: gray;" class="text-center">Todos los campos son obligatorios.
+            </p>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre del Proyecto</label>
+                <input type="text" class="form-control p-2" id="nombre" name="nombre" 
+                    [(ngModel)]="nombre" required>
+            </div>
+            <div class="row">
+            <div class="col-6 mb-3">
+                <label for="enlace" class="form-label">Enlace al proyecto</label>
+                <input type="text" class="form-control p-2" id="enlace" name="enlace" placeholder="http://..."
+                    [(ngModel)]="enlace" required>
+            </div>
+            <div class="col-6 mb-3">
+                <label for="urlimagen" class="form-label">Imagen del proyecto</label>
+                <input class="form-control p-2" id="urlimagen" type="url" name="urlimagen" placeholder="http://..."
+                    [(ngModel)]="urlimagen" required>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <label for="fechainicio" class="form-label">Fecha de inicio</label>
+                    <input class="form-control p-2" id="fechainicio" type="text" name="fechaincio"
+                        [(ngModel)]="fechainicio" required>
+                </div>
+                <div class="col-6 mb-3">
+                    <label for="fechafin" class="form-label">Fecha de fin</label>
+                    <input class="form-control p-2" id="fechafin" type="text" name="fechafin"
+                        [(ngModel)]="fechafin" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripción del proyecto</label>
+                <textarea class="form-control p-2" id="descripcion" rows="4" name="descripcion"
+                    [(ngModel)]="descripcion" required aria-describedby="descripcionformat">
+                </textarea>
+                <div id="descripcionformat" class="form-text">Max. 300 caracteres</div>
+            </div>
+            <button type="submit" class="btn save d-block ms-auto mb-3">Agregar</button>
+        </form>
+    </div>
+</div>

@@ -4,7 +4,7 @@
     <h2 class="mb-3 d-inline-block">Hard and Soft Skills</h2>
     <!-- Botón Agregar Skills/Idioma -->
     <button class="boton-add" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasAddSkillsIdioma"
-        aria-controls="offcanvasNavbar">
+        aria-controls="offcanvasNavbar" *ngIf="isLogged">
         <i class="bi bi-plus-square fs-3 ms-5"></i>
     </button>
     <!-- Formulario Agregar Skills/Idioma -->
@@ -18,12 +18,9 @@
             <p style="margin-bottom: 36px; color: gray;" class="text-center">Seleccione el tipo de elemento que desea
                 agregar.</p>
             <div class="d-grid gap-5 mx-auto">
-                <button class="btn btn-lg" type="button" data-bs-toggle="offcanvas" data-bs-target="#addSoftSkill"
-                    aria-controls="staticBackdrop" routerLink="/nuevasoftskill">Soft skills</button>
-                <button class="btn btn-lg" type="button" data-bs-toggle="offcanvas" data-bs-target="#addHardSkill"
-                    aria-controls="staticBackdrop" routerLink="/nuevahardskill">Hard Skills</button>
-                <button class="btn btn-lg" type="button" data-bs-toggle="offcanvas" data-bs-target="#addIdioma"
-                    aria-controls="staticBackdrop" routerLink="/nuevoidioma">Idiomas</button>
+                <button class="btn btn-lg" type="button" routerLink="/addSoftskill">Soft skills</button>
+                <button class="btn btn-lg" type="button" routerLink="/addHardskill">Hard Skills</button>
+                <button class="btn btn-lg" type="button" routerLink="/addIdioma">Idiomas</button>
             </div>
         </div>
     </div>

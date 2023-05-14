@@ -2,7 +2,7 @@
 <section id="Proyectos" class="container-fluid secciones">
     <h2 class="mb-3 d-inline-block">Proyectos</h2>
     <!-- Botón Agregar Proyecto -->
-    <button class="boton-add" type="button">
+    <button class="boton-add" type="button" *ngIf="isLogged" routerLink="/addProyecto">
         <i class="bi bi-plus-square fs-3 ms-5"></i>
     </button>
 

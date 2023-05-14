@@ -1,0 +1,51 @@
+<!-- Formulario Agregar Experiencia-->
+<div class="container-fluid imgfondo">
+    <div class="container fondo shadow">
+        <form (ngSubmit)="onCreateExperiencia()" novalidate #f="ngForm" class="p-4">
+            <div class="d-grid d-md-flex justify-content-md-end">
+                <button type="button" class="btn-close fs-5 me-md-2" aria-label="Close" routerLink="/"></button>
+            </div>
+            <h3>Agregar Experiencia</h3>
+            <p style="margin-bottom: 24px; color: gray;" class="text-center">Todos los campos son obligatorios.
+            </p>
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <label for="compania" class="form-label">Empresa</label>
+                    <input type="text" class="form-control p-2" id="compania" name="compania" placeholder="Nombre de la Empresa"
+                        [(ngModel)]="compania" required>
+                </div>
+                <div class="col-6 mb-3">
+                    <label for="puesto" class="form-label">Puesto</label>
+                    <input type="text" class="form-control p-2" id="puesto" name="puesto" placeholder="Nombre del puesto"
+                        [(ngModel)]="puesto" required>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="urllogocomp" class="form-label">Logo de la Empresa</label>
+                <input class="form-control p-2" id="urllogocomp" type="url" name="urllogocomp" placeholder="http://..."
+                    [(ngModel)]="urllogocomp" required>
+            </div>
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <label for="fechainicio" class="form-label">Fecha de inicio</label>
+                    <input class="form-control p-2" id="fechainicio" type="text" name="fechaincio"
+                        [(ngModel)]="fechainicio" required>
+                </div>
+                <div class="col-6 mb-3">
+                    <label for="fechafin" class="form-label">Fecha de fin</label>
+                    <input class="form-control p-2" id="fechafin" type="text" name="fechafin"
+                        [(ngModel)]="fechafin" required aria-describedby="fechafinformat">
+                    <div id="fechafinformat" class="form-text">Si es tu trabajo actual escribe Actual</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="descripciontrabajo" class="form-label">Descripción de actividades</label>
+                <textarea class="form-control p-2" id="descripciontrabajo" name="descripciontrabajo" rows="4"
+                    [(ngModel)]="descripciontrabajo" required aria-describedby="descripcionformat">
+                </textarea>
+                <div id="descripcionformat" class="form-text">Max. 300 caracteres</div>
+            </div>
+            <button type="submit" class="btn save d-block ms-auto mb-3">Agregar</button>
+        </form>
+    </div>
+</div>

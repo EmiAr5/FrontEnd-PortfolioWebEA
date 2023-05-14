@@ -2,7 +2,7 @@
 <section id="Educacion" class="container-fluid secciones">
     <h2 class="mb-3 d-inline-block">Educación</h2>
     <!-- Botón Agregar Educación -->
-    <button class="boton-add" type="button">
+    <button class="boton-add" type="button" *ngIf="isLogged" routerLink="/addEducacion">
         <i class="bi bi-plus-square fs-3 ms-5"></i>
     </button>
 
