@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Idioma } from 'src/app/model/idioma';
 import { IdiomaService } from 'src/app/service/idioma.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-editidioma',
@@ -29,11 +30,18 @@ export class EditidiomaComponent implements OnInit {
     const id = this.activatedRoute.snapshot.params['id'];
     this.idiomaS.update(id, this.idioma).subscribe(
       data => {
-        alert("Se modificaron los datos correctamente");
+        Swal.fire(
+          'Idioma',
+          'El idioma ha sido modificado con éxito',
+          'success'
+        );
         this.route.navigate(['']);
       }, err => {
-        alert("No se pudieron modificar los datos del idioma")
-        this.route.navigate(['']);
+        Swal.fire({
+          icon: 'error',
+          title: 'Idioma no pudo ser modificadao',
+          text: 'Revisa los campos ingresados.',
+        });
       }
     )
   }

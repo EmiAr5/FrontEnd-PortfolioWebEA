@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Experiencia } from 'src/app/model/experiencia';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-addexperiencia',
@@ -30,11 +31,18 @@ export class AddexperienciaComponent implements OnInit {
     const experiencia = new Experiencia(this.urllogocomp, this.fechainicio, this.fechafin, this.puesto, this.compania, this.descripciontrabajo);
     this.experienciaS.save(experiencia).subscribe(
       data => {
-        alert("Experiencia creada correctamente");
+        Swal.fire(
+          'Experiencia creada',
+          'La experiencia ha sido creada con éxito',
+          'success'
+        );
         this.router.navigate(['']);
       }, err => {
-        alert("Experiencia no pudo ser creada");
-        this.router.navigate(['']);
+        Swal.fire({
+          icon: 'error',
+          title: 'Experiencia no pudo ser creada',
+          text: 'Revisa los campos ingresados.',
+        });
       }
     )
   }

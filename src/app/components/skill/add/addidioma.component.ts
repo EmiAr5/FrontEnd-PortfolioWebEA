@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Idioma } from 'src/app/model/idioma';
 import { IdiomaService } from 'src/app/service/idioma.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-addidioma',
@@ -22,11 +23,18 @@ export class AddidiomaComponent implements OnInit {
     const idioma = new Idioma(this.nombre, this.escritura, this.lectura, this.oralidad);
     this.idiomaS.save(idioma).subscribe(
       data => {
-        alert("Idioma creado correctamente");
+        Swal.fire(
+          'Idioma creado',
+          'El idioma ha sido creado con éxito',
+          'success'
+        );
         this.router.navigate(['']);
       }, err => {
-        alert("Idioma no pudo ser creado");
-        this.router.navigate(['']);
+        Swal.fire({
+          icon: 'error',
+          title: 'Idioma no pudo ser creado',
+          text: 'Revisa los campos ingresados.',
+        });
       }
     )
   }

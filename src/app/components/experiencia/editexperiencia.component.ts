@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Experiencia } from 'src/app/model/experiencia';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-editexperiencia',
@@ -30,11 +31,18 @@ export class EditexperienciaComponent implements OnInit {
     const id = this.activatedRoute.snapshot.params['id'];
     this.experienciaS.update(id, this.experiencia).subscribe(
       data => {
-        alert("Se modificaron los datos correctamente");
+        Swal.fire(
+          'Experiencia',
+          'La experiencia ha sido modificada con éxito',
+          'success'
+        );
         this.route.navigate(['']);
       }, err => {
-        alert("No se pudieron modificar los datos de la experiencia")
-        this.route.navigate(['']);
+        Swal.fire({
+          icon: 'error',
+          title: 'Experiencia no pudo ser modificada',
+          text: 'Revisa los campos ingresados.',
+        });
       }
     )
   }
