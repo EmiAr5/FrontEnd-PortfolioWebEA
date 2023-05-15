@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Persona } from 'src/app/model/persona';
 import { PersonaService } from 'src/app/service/persona.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-editinfopersonal',
@@ -30,11 +31,18 @@ export class EditinfopersonalComponent {
     const id = this.activatedRoute.snapshot.params['id'];
     this.personaS.update(1, this.persona).subscribe(
       data => {
-        alert("Se modificaron los datos correctamente");
+        Swal.fire(
+          'Información personal',
+          'La sección de Información personal ha sido modificada con éxito',
+          'success'
+        );
         this.route.navigate(['']);
       }, err => {
-        alert("No se pudieron modificar los datos del header")
-        this.route.navigate(['']);
+        Swal.fire({
+          icon: 'error',
+          title: 'Información personal no pudo ser modificada',
+          text: 'Revisa los campos ingresados.',
+        });
       }
     )
   }
