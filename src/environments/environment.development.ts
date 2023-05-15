@@ -1,4 +1,4 @@
 export const environment = {
-    production: false,
-    URL: 'http://localhost:8080/',
+    production: true,
+    URL: 'https://backendportfolioea.onrender.com/',
 };
