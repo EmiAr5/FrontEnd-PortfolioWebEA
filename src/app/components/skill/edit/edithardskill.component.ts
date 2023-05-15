@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Hardskill } from 'src/app/model/hardskill';
 import { HardskillService } from 'src/app/service/hardskill.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edithardskill',
@@ -30,11 +31,18 @@ export class EdithardskillComponent implements OnInit {
     const id = this.activatedRoute.snapshot.params['id'];
     this.hardskillS.update(id, this.hardskill).subscribe(
       data => {
-        alert("Se modificaron los datos correctamente");
+        Swal.fire(
+          'Habilidad',
+          'La Hard Skill ha sido modificada con éxito',
+          'success'
+        );
         this.route.navigate(['']);
       }, err => {
-        alert("No se pudieron modificar los datos de la habilidad")
-        this.route.navigate(['']);
+        Swal.fire({
+          icon: 'error',
+          title: 'Hard Skill no pudo ser modificada',
+          text: 'Revisa los campos ingresados.',
+        });
       }
     )
   }

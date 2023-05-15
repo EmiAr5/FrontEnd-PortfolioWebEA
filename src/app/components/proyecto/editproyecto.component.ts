@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Proyecto } from 'src/app/model/proyecto';
 import { ProyectoService } from 'src/app/service/proyecto.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-editproyecto',
@@ -29,11 +30,18 @@ export class EditproyectoComponent implements OnInit {
     const id = this.activatedRoute.snapshot.params['id'];
     this.proyectoS.update(id, this.proyecto).subscribe(
       data => {
-        alert("Se modificaron los datos correctamente");
+        Swal.fire(
+          'Proyecto',
+          'El proyecto ha sido modificado con éxito',
+          'success'
+        );
         this.route.navigate(['']);
       }, err => {
-        alert("No se pudieron modificar los datos del proyecto")
-        this.route.navigate(['']);
+        Swal.fire({
+          icon: 'error',
+          title: 'Proyecto no pudo ser modificado',
+          text: 'Revisa los campos ingresados.',
+        });
       }
     )
   }

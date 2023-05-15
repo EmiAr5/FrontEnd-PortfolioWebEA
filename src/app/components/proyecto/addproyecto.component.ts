@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Proyecto } from 'src/app/model/proyecto';
 import { ProyectoService } from 'src/app/service/proyecto.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-addproyecto',
@@ -24,11 +25,18 @@ enlace: string;
     const proyecto = new Proyecto(this.enlace, this.urlimagen, this.nombre, this.fechainicio, this.fechafin, this.descripcion);
     this.proyectoS.save(proyecto).subscribe(
       data => {
-        alert("Proyecto creado correctamente");
+        Swal.fire(
+          'Proyecto creado',
+          'El proyecto ha sido creado con éxito',
+          'success'
+        );
         this.router.navigate(['']);
       }, err => {
-        alert("Proyecto no pudo ser creado");
-        this.router.navigate(['']);
+        Swal.fire({
+          icon: 'error',
+          title: 'Proyecto no pudo ser creado',
+          text: 'Revisa los campos ingresados.',
+        });
       }
     )
   }

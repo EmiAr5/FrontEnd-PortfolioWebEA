@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Hardskill } from 'src/app/model/hardskill';
 import { HardskillService } from 'src/app/service/hardskill.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-addhardskill',
@@ -20,11 +21,18 @@ export class AddhardskillComponent implements OnInit {
     const hardskill = new Hardskill(this.nombre, this.porcentaje);
     this.hardskillS.save(hardskill).subscribe(
       data => {
-        alert("Hard Skill creada correctamente");
+        Swal.fire(
+          'Habilidad creada',
+          'La Hard Skill ha sido creada con éxito',
+          'success'
+        );
         this.router.navigate(['']);
       }, err => {
-        alert("Hard Skill no pudo ser creada");
-        this.router.navigate(['']);
+        Swal.fire({
+          icon: 'error',
+          title: 'Hard Skill no pudo ser creada',
+          text: 'Revisa los campos ingresados.',
+        });
       }
     )
   }

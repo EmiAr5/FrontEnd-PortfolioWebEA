@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionService } from 'src/app/service/educacion.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-editeducacion',
@@ -29,11 +30,18 @@ export class EditeducacionComponent implements OnInit {
     const id = this.activatedRoute.snapshot.params['id'];
     this.educacionS.update(id, this.educacion).subscribe(
       data => {
-        alert("Se modificaron los datos correctamente");
+        Swal.fire(
+          'Educación',
+          'La educación ha sido modificada con éxito',
+          'success'
+        );
         this.route.navigate(['']);
       }, err => {
-        alert("No se pudieron modificar los datos de la educacion")
-        this.route.navigate(['']);
+        Swal.fire({
+          icon: 'error',
+          title: 'Educación no pudo ser modificada',
+          text: 'Revisa los campos ingresados.',
+        });
       }
     )
   }
