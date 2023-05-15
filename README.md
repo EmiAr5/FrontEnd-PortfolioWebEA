@@ -19,7 +19,6 @@ Las siguientes funcionalidades aún están pendientes:
   - Interfaz para la creación de un nuevo usuario.
   - Posibilidad de editar las redes sociales de la barra de navegación principal.
   - Posibilidad de editar los títulos del menú secundario y componentes.
-  - Cartel de alerta para la eliminación de un elemento. 
 
 # Autora del Proyecto
 Emiliana Arduzzo
